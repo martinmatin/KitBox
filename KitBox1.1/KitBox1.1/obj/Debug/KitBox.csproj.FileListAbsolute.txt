@@ -1,0 +1,11 @@
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\bin\Debug\KitBox1.1.exe.config
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\bin\Debug\KitBox1.1.exe
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\bin\Debug\KitBox1.1.pdb
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox.csprojResolveAssemblyReference.cache
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox1._1.formIntro.resources
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox1._1.Properties.Resources.resources
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox1._1.userControlCommande.resources
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox1._1.userControlIntro.resources
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox.csproj.GenerateResource.Cache
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox1.1.exe
+C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox1.1.pdb
