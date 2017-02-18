@@ -16,7 +16,7 @@ namespace KitBox1._1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formIntro());
+            Application.Run(new form());
         }
     }
 }

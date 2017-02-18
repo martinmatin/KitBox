@@ -41,5 +41,36 @@ namespace KitBox1._1
         {
 
         }
+
+        private void formColor_Click(object sender, EventArgs e)
+        {
+            formColorArmoire f2 = new formColorArmoire();
+            f2.userControlCommande = this; // Allow Form2 to access Form1 public members
+            f2.ShowDialog();
+        }
+
+        private void corniereColor_Click(object sender, EventArgs e)
+        {
+            formColorCorniere f2 = new formColorCorniere();
+            f2.userControlCommande = this; // Allow Form2 to access Form1 public members
+            f2.ShowDialog();
+
+        }
+
+        public Color armCol
+        {
+            set
+            {
+                this.armoireCol.BackColor = value;
+            }
+        }
+
+        public Color cornCol
+        {
+            set
+            {
+                this.corniereColor.BackColor = value;
+            }
+        }
     }
 }

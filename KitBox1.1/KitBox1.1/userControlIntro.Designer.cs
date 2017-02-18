@@ -34,23 +34,32 @@
             // btnIntro
             // 
             this.btnIntro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnIntro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIntro.Location = new System.Drawing.Point(494, 359);
+            this.btnIntro.BackColor = System.Drawing.Color.Transparent;
+            this.btnIntro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIntro.FlatAppearance.BorderSize = 0;
+            this.btnIntro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnIntro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnIntro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIntro.Font = new System.Drawing.Font("Open Sans", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIntro.ForeColor = System.Drawing.Color.Transparent;
+            this.btnIntro.Location = new System.Drawing.Point(321, 527);
             this.btnIntro.Name = "btnIntro";
-            this.btnIntro.Size = new System.Drawing.Size(587, 139);
+            this.btnIntro.Size = new System.Drawing.Size(617, 107);
             this.btnIntro.TabIndex = 0;
-            this.btnIntro.Text = "Construire une armoire";
-            this.btnIntro.UseVisualStyleBackColor = true;
+            this.btnIntro.UseVisualStyleBackColor = false;
             this.btnIntro.Click += new System.EventHandler(this.btnIntro_Click);
             // 
             // userControlIntro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = global::KitBox1._1.Properties.Resources.homeScreen1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnIntro);
+            this.DoubleBuffered = true;
             this.Name = "userControlIntro";
-            this.Size = new System.Drawing.Size(1594, 884);
+            this.Size = new System.Drawing.Size(1236, 697);
             this.ResumeLayout(false);
 
         }

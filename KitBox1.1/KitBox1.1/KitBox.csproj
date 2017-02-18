@@ -46,14 +46,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="formIntro.cs">
+    <Compile Include="form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formIntro.Designer.cs">
-      <DependentUpon>formIntro.cs</DependentUpon>
+    <Compile Include="form.Designer.cs">
+      <DependentUpon>form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formColorCorniere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formColorCorniere.Designer.cs">
+      <DependentUpon>formColorCorniere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formColorArmoire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formColorArmoire.Designer.cs">
+      <DependentUpon>formColorArmoire.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="userControlCommande.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -66,19 +83,20 @@
     <Compile Include="userControlIntro.Designer.cs">
       <DependentUpon>userControlIntro.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="formIntro.resx">
-      <DependentUpon>formIntro.cs</DependentUpon>
+    <EmbeddedResource Include="form.resx">
+      <DependentUpon>form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formColorCorniere.resx">
+      <DependentUpon>formColorCorniere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formColorArmoire.resx">
+      <DependentUpon>formColorArmoire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="userControlCommande.resx">
       <DependentUpon>userControlCommande.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\tesst.png" />
+    <None Include="Resources\interoggation_point.png" />
+    <None Include="Resources\changeColor.png" />
+    <None Include="Resources\pg1_valider_bouton.png" />
+    <None Include="Resources\pg1_background.png" />
+    <None Include="Resources\btnStartDesign.png" />
+    <None Include="Resources\homeScreen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
