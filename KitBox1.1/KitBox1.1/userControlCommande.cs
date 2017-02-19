@@ -72,5 +72,18 @@ namespace KitBox1._1
                 this.corniereColor.BackColor = value;
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                pictureHide.Visible = false;
+            }
+            else
+            {
+                pictureHide.Visible = true;
+
+            }
+        }
     }
 }

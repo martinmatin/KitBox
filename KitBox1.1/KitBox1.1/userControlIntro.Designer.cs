@@ -42,9 +42,9 @@
             this.btnIntro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIntro.Font = new System.Drawing.Font("Open Sans", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIntro.ForeColor = System.Drawing.Color.Transparent;
-            this.btnIntro.Location = new System.Drawing.Point(321, 527);
+            this.btnIntro.Location = new System.Drawing.Point(527, 845);
             this.btnIntro.Name = "btnIntro";
-            this.btnIntro.Size = new System.Drawing.Size(617, 107);
+            this.btnIntro.Size = new System.Drawing.Size(981, 175);
             this.btnIntro.TabIndex = 0;
             this.btnIntro.UseVisualStyleBackColor = false;
             this.btnIntro.Click += new System.EventHandler(this.btnIntro_Click);
@@ -59,7 +59,7 @@
             this.Controls.Add(this.btnIntro);
             this.DoubleBuffered = true;
             this.Name = "userControlIntro";
-            this.Size = new System.Drawing.Size(1236, 697);
+            this.Size = new System.Drawing.Size(2000, 1128);
             this.ResumeLayout(false);
 
         }
