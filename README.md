@@ -1,7 +1,7 @@
 # KitBox
 **Projet informatique 2017**
 
-Julien Kessels
+Julien Kessels |
 Crappe Martin
 Castermans Charles
 Kabemba Christelle
