@@ -7,5 +7,5 @@ Castermans Charles |
 Kabemba Christelle |
 Vandebusch Benjamin 
 
-![alt tag](http://img.clubic.com/07693971-photo-datacenter-facebook.jpg)
+![alt tag](https://lh4.googleusercontent.com/B8SXK9E2eNW95pv0cu_fDssLbgwyWPah2M9iy_1INvNperm7BxyHFO2iQ9STaeI9KbqyeJjkhylImrI=w1280-h958-rw)
 
