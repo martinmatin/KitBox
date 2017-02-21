@@ -124,11 +124,17 @@
   <data name="btnStartDesign" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnStartDesign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="home_button3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_button3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="changeColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\changeColor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="interoggation_point" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\interoggation_point.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="homeScreen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\homeScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pg1_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pg1_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,7 +142,7 @@
   <data name="tesst" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\tesst.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="homeScreen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\homeScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="home_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

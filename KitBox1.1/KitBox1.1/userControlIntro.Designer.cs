@@ -35,6 +35,7 @@
             // 
             this.btnIntro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnIntro.BackColor = System.Drawing.Color.Transparent;
+            this.btnIntro.BackgroundImage = global::KitBox1._1.Properties.Resources.home_button3;
             this.btnIntro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIntro.FlatAppearance.BorderSize = 0;
             this.btnIntro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -42,9 +43,9 @@
             this.btnIntro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIntro.Font = new System.Drawing.Font("Open Sans", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIntro.ForeColor = System.Drawing.Color.Transparent;
-            this.btnIntro.Location = new System.Drawing.Point(527, 845);
+            this.btnIntro.Location = new System.Drawing.Point(587, 809);
             this.btnIntro.Name = "btnIntro";
-            this.btnIntro.Size = new System.Drawing.Size(981, 175);
+            this.btnIntro.Size = new System.Drawing.Size(829, 175);
             this.btnIntro.TabIndex = 0;
             this.btnIntro.UseVisualStyleBackColor = false;
             this.btnIntro.Click += new System.EventHandler(this.btnIntro_Click);
@@ -54,7 +55,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.BackgroundImage = global::KitBox1._1.Properties.Resources.homeScreen1;
+            this.BackgroundImage = global::KitBox1._1.Properties.Resources.home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnIntro);
             this.DoubleBuffered = true;

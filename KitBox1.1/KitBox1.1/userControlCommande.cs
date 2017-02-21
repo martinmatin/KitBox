@@ -12,9 +12,12 @@ namespace KitBox1._1
 {
     public partial class userControlCommande : UserControl
     {
-        public userControlCommande()
+        session sess;
+        public userControlCommande(session sess)
         {
+            this.sess = sess;
             InitializeComponent();
+            string test = sess.getClient().getName();
         }
 
         private void userControlCommande_Load(object sender, EventArgs e)
@@ -54,7 +57,6 @@ namespace KitBox1._1
             formColorCorniere f2 = new formColorCorniere();
             f2.userControlCommande = this; // Allow Form2 to access Form1 public members
             f2.ShowDialog();
-
         }
 
         public Color armCol

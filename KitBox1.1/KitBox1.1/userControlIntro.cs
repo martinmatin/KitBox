@@ -12,15 +12,17 @@ namespace KitBox1._1
 {
     public partial class userControlIntro : UserControl
     {
+        session sess = new session();
         public userControlIntro()
         {
             InitializeComponent();
+
         }
 
         private void btnIntro_Click(object sender, EventArgs e)
         {
             this.Controls.Clear();
-            this.Controls.Add(new userControlCommande());
+            this.Controls.Add(new userControlCommande(sess));
         }
 
         private void label1_Click(object sender, EventArgs e)

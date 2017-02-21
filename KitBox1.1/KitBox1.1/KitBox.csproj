@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="client.cs" />
     <Compile Include="form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +72,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="session.cs" />
     <Compile Include="userControlCommande.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +120,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\tesst.png" />
+    <None Include="Resources\home_background.png" />
+    <None Include="Resources\home_button3.png" />
     <None Include="Resources\interoggation_point.png" />
     <None Include="Resources\changeColor.png" />
     <None Include="Resources\pg1_valider_bouton.png" />
