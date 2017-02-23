@@ -11,3 +11,6 @@ C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.
 C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox1._1.form.resources
 C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox1._1.formColorArmoire.resources
 C:\Users\julie\OneDrive\documents\visual studio 2015\Projects\KitBox1.1\KitBox1.1\obj\Debug\KitBox1._1.formColorCorniere.resources
+C:\Users\Christelle Kabemba\KitBox\KitBox1.1\KitBox1.1\bin\Debug\KitBox1.1.exe.config
+C:\Users\Christelle Kabemba\KitBox\KitBox1.1\KitBox1.1\obj\Debug\KitBox1.1.exe
+C:\Users\Christelle Kabemba\KitBox\KitBox1.1\KitBox1.1\obj\Debug\KitBox1.1.pdb
