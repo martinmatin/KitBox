@@ -8,8 +8,8 @@ namespace kitbox
 {
     public class Traverse : IElement
     {
-        private int _reference;
-        private int _code;
+        private string _reference;
+        private string _code;
         private int _height;
         private int _depth;
         private int _width;
@@ -21,7 +21,7 @@ namespace kitbox
         private int _position;
 
         //Constructor
-        public Traverse(int reference, int code, int height, int depth, int width, int stock, int percase, string supplier, double clientprice, int position)
+        public Traverse(string reference, string code, int height, int depth, int width, int stock, int percase, string supplier, double clientprice, int position)
         {
             _reference = reference;
             _code = code;
@@ -37,8 +37,8 @@ namespace kitbox
 
         }
         //Propoerty Implementation
-        public int code { get { return _code; } }
-        public int reference { get { return _reference; } }
+        public string code { get { return _code; } }
+        public string reference { get { return _reference; } }
         public int height { get { return _height; } }
         public int depth { get { return _depth; } }
         public int width { get { return _width; } }

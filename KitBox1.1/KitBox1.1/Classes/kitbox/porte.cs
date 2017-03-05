@@ -8,8 +8,8 @@ namespace kitbox
 {
     public class Porte : IElement
     {
-        private int _reference;
-        private int _code;
+        private string _reference;
+        private string _code;
         private int _height;
         private int _depth;
         private int _width;
@@ -21,7 +21,7 @@ namespace kitbox
         private string _material;
 
         //Constructor
-        public Porte(int reference, int code, int height, int depth, int width, int stock, int percase, string supplier, double clientprice, int position, string material)
+        public Porte(string reference, string code, int height, int depth, int width, int stock, int percase, string supplier, double clientprice, int position, string material)
         {
             _reference = reference;
             _code = code;
@@ -36,9 +36,9 @@ namespace kitbox
             _material = material;
 
         }
-        //Propoerty Implementation
-        public int code { get { return _code; } }
-        public int reference { get { return _reference; } }
+        //Property Implementation
+        public string code { get { return _code; } }
+        public string reference { get { return _reference; } }
         public int height { get { return _height; } }
         public int depth { get { return _depth; } }
         public int width { get { return _width; } }
@@ -47,7 +47,7 @@ namespace kitbox
         public string supplier { get { return _supplier; } }
         public double clientprice { get { return _clientprice; } }
 
-        public int position { get { return _position; } }
+        public string material { get { return _material; } }
 
     }
 }

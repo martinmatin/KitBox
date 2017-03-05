@@ -1,2 +1,3 @@
 c:\users\christelle kabemba\documents\visual studio 2015\Projects\kitbox\kitbox\bin\Debug\kitbox.exe.config
 C:\Users\Christelle Kabemba\Documents\Visual Studio 2015\Projects\kitbox\kitbox\obj\Debug\kitbox.csprojResolveAssemblyReference.cache
+C:\Users\Christelle Kabemba\KitBox\KitBox1.1\KitBox1.1\Classes\kitbox\bin\Debug\kitbox.exe.config

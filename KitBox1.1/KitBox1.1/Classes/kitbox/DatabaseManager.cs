@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace kitbox
 {
-    public class Porte
+    class DatabaseManager
     {
-        public Porte(string material)
+        public void fetch(IElement element) { }
+        public IElement comparePrice(KeyValuePair<IElement, IElement>)
         {
-
+            return null;
         }
     }
 }
