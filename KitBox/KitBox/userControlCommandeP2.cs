@@ -44,41 +44,48 @@ namespace KitBox
             panelShelf2.Visible = false;
             btnGoToShelf2.Visible = false;
 
-            lblDepth.Text = om.getCabinetDimensions()[1].ToString()+" cm";
-            lblWidth.Text = om.getCabinetDimensions()[0].ToString()+" cm";
+            lblDepth.Text = om.getCabinetDimensions()[1].ToString() + " cm";
+            lblWidth.Text = om.getCabinetDimensions()[0].ToString() + " cm";
 
         }
 
         private void btnAddShelf_Click(object sender, EventArgs e)
         {
-            comboHauteur.Text = "";
-            om.newCasier();
-            index++;
-            i++;
-            Panel p = (Panel)this.Controls.Find(("panelShelf" + i.ToString()), true).FirstOrDefault();
-            p.Visible = true;
-
-            Button b = (Button)this.Controls.Find(("btnGoToShelf" + i.ToString()), true).FirstOrDefault();
-            b.Visible = true;
-
-            if (i < 7)
+            string temp = om.getCasierHeight(i-1).ToString();
+            if (om.getCasierHeight(i-1).ToString().Equals("0"))
             {
-                btnAddShelf.Parent = p;
-                Type thisType = this.GetType();
-                MethodInfo theMethod = thisType.GetMethod("btnGoToShelf"+i.ToString()+"_Click");
-                EventArgs[] arr1 = new EventArgs[] { EventArgs.Empty, EventArgs.Empty };     
-                theMethod.Invoke(this, arr1);
-            }
-            else if (i==7)
-            {
-                Type thisType = this.GetType();
-                MethodInfo theMethod = thisType.GetMethod("btnGoToShelf" + i.ToString() + "_Click");
-                EventArgs[] arr1 = new EventArgs[] { EventArgs.Empty, EventArgs.Empty };
-                theMethod.Invoke(this, arr1);
+                MessageBox.Show("Veuillez indiquer une hauteur pour votre dernier casier.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                btnAddShelf.Visible = false;
+                om.newCasier();
+                index++;
+                i++;
+                Panel p = (Panel)this.Controls.Find(("panelShelf" + i.ToString()), true).FirstOrDefault();
+                p.Visible = true;
+
+                Button b = (Button)this.Controls.Find(("btnGoToShelf" + i.ToString()), true).FirstOrDefault();
+                b.Visible = true;
+
+                if (i < 7)
+                {
+                    btnAddShelf.Parent = p;
+                    Type thisType = this.GetType();
+                    MethodInfo theMethod = thisType.GetMethod("btnGoToShelf" + i.ToString() + "_Click");
+                    EventArgs[] arr1 = new EventArgs[] { EventArgs.Empty, EventArgs.Empty };
+                    theMethod.Invoke(this, arr1);
+                }
+                else if (i == 7)
+                {
+                    Type thisType = this.GetType();
+                    MethodInfo theMethod = thisType.GetMethod("btnGoToShelf" + i.ToString() + "_Click");
+                    EventArgs[] arr1 = new EventArgs[] { EventArgs.Empty, EventArgs.Empty };
+                    theMethod.Invoke(this, arr1);
+                }
+                else
+                {
+                    btnAddShelf.Visible = false;
+                }
             }
         }
 
@@ -86,6 +93,7 @@ namespace KitBox
         {
             index = 0;
             lblWhatShelf.Text = "Etage 1";
+            changeCombo(index);
             unselectAll();
             btnGoToShelf1.BackgroundImage = Properties.Resources.color1;
         }
@@ -94,6 +102,7 @@ namespace KitBox
         {
             index = 1;
             lblWhatShelf.Text = "Etage 2";
+            changeCombo(index);
             unselectAll();
             btnGoToShelf2.BackgroundImage = Properties.Resources.color2;
             //var value = Properties.Resources.ResourceManager.GetObject("grey3", Properties.Resources.Culture);
@@ -104,6 +113,8 @@ namespace KitBox
         {
             index = 2;
             lblWhatShelf.Text = "Etage 3";
+            changeCombo(index);
+
             unselectAll();
             btnGoToShelf3.BackgroundImage = Properties.Resources.color3;
 
@@ -113,6 +124,8 @@ namespace KitBox
         {
             index = 3;
             lblWhatShelf.Text = "Etage 4";
+            changeCombo(index);
+
             unselectAll();
             btnGoToShelf4.BackgroundImage = Properties.Resources.color4;
 
@@ -122,6 +135,8 @@ namespace KitBox
         {
             index = 4;
             lblWhatShelf.Text = "Etage 5";
+            changeCombo(index);
+
             unselectAll();
             btnGoToShelf5.BackgroundImage = Properties.Resources.color5;
 
@@ -131,6 +146,8 @@ namespace KitBox
         {
             index = 5;
             lblWhatShelf.Text = "Etage 6";
+            changeCombo(index);
+
             unselectAll();
             btnGoToShelf6.BackgroundImage = Properties.Resources.color6;
         }
@@ -139,10 +156,30 @@ namespace KitBox
         {
             index = 6;
             lblWhatShelf.Text = "Etage 7";
+            changeCombo(index);
+
             unselectAll();
             btnGoToShelf7.BackgroundImage = Properties.Resources.color7;
         }
 
+        void changeCombo(int index)
+        {
+            comboPartie.SelectedValue = 1;
+            comboPartie.SelectedText = "Portes";
+            comboPartie.Text = "Portes";
+
+            if (om.getCasierHeight(index).ToString().Equals("0"))
+            {
+                comboHauteur.SelectedValue = null;
+                comboHauteur.SelectedText = null;
+                comboHauteur.Text = null;
+            }
+            else
+            {
+                comboHauteur.SelectedValue = om.getCasierHeight(index).ToString() + "cm";
+                comboHauteur.Text = om.getCasierHeight(index).ToString() + "cm";
+            }
+        }
 
         private void unselectAll()
         {
@@ -163,13 +200,24 @@ namespace KitBox
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            om.resetCabinet();
             this.Controls.Clear();
             this.Controls.Add(new userControlCommandeP1(om));
         }
 
         private void comboHauteur_SelectedIndexChanged(object sender, EventArgs e)
         {
-            om.setCasierHeight(index, Convert.ToInt32(comboHauteur.Text));
+            string temp = comboHauteur.Text;
+            if (!comboHauteur.Text.Equals(""))
+            om.setCasierHeight(index, Convert.ToInt32(comboHauteur.Text.Replace("cm","")));
+
+            int height = 0;
+            for(int count = 0; count < i; count++)
+            {
+                height += om.getCasierHeight(count);
+            }
+            lblHeight.Text = height.ToString()+" cm";
         }
+
     }
 }

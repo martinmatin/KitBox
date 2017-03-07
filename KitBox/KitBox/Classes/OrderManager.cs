@@ -47,12 +47,21 @@ namespace KitBox
             this._command.getArmoire().setCasierPartieXColor(index, "PorteGauche", colorleft);
             this._command.getArmoire().setCasierPartieXColor(index, "PorteDroite", colorright);
         }
-        
+
+        public int getCasierHeight(int index)
+        {
+            return this._command.getArmoire().getCasierHeight(index);
+        }
+
         public void setCasierHeight(int index, int height)
         {
             this._command.getArmoire().setCasierHeight(index, height);
         }
 
+        public void resetCabinet()
+        {
+            this._command.getArmoire().resetCabinet();
+        }
 
         public void setDoorType(string type) {
         }

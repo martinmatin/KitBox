@@ -78,6 +78,11 @@ namespace KitBox
             _casiers[index].setColorPartieX(partie, color);
         }
 
+        //Get CasierHeight
+        public int getCasierHeight(int index)
+        {
+            return _casiers[index].getHeight();
+        }
         //Set CasierHeight
         public void setCasierHeight(int index, int height)
         {
@@ -88,7 +93,7 @@ namespace KitBox
         //Reset Cabinet
         public void resetCabinet()
         {
-            this._casiers = null;
+            this._casiers = new List<Casier>();
         }
     }
 }

@@ -124,9 +124,6 @@
   <data name="grey4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grey4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pg2_plusbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pg2_plusbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="homme_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\homme_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,20 +133,29 @@
   <data name="color3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\color3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="color6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grey3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grey3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grey6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grey6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgCleanShelf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgCleanShelf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pg2_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pg2_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="color4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="grey2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grey2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="color2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\color2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="color5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="grey5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grey5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,11 +163,11 @@
   <data name="home_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="color4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\color4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="color2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="grey3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grey3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pg2_plusbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pg2_plusbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="grey1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grey1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +175,14 @@
   <data name="pg1_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pg1_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="color5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\color5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="grey7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grey7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="color7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pg2_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pg2_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="color1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\color1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,16 +190,7 @@
   <data name="pg1_valider_bouton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pg1_valider_bouton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="color6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\color6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="color7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\color7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="grey6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grey6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="grey7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grey7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

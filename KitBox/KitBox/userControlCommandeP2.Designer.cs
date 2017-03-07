@@ -48,6 +48,11 @@
             this.lblDepth = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.comboHauteur = new System.Windows.Forms.ComboBox();
+            this.lblHeight = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboPartie = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelShelf1.SuspendLayout();
             this.panelShelf2.SuspendLayout();
             this.panelShelf3.SuspendLayout();
@@ -60,7 +65,7 @@
             // 
             this.lblWhatShelf.AutoSize = true;
             this.lblWhatShelf.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWhatShelf.Location = new System.Drawing.Point(521, 110);
+            this.lblWhatShelf.Location = new System.Drawing.Point(650, 98);
             this.lblWhatShelf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWhatShelf.Name = "lblWhatShelf";
             this.lblWhatShelf.Size = new System.Drawing.Size(190, 55);
@@ -297,11 +302,16 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(97, 859);
+            this.btnBack.BackgroundImage = global::KitBox.Properties.Resources.back;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(101, 806);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(114, 67);
+            this.btnBack.Size = new System.Drawing.Size(100, 100);
             this.btnBack.TabIndex = 19;
-            this.btnBack.Text = "Retour";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -310,20 +320,75 @@
             this.comboHauteur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboHauteur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboHauteur.Items.AddRange(new object[] {
-            "32",
-            "42",
-            "52",
-            "62",
-            "80",
-            "100",
-            "120"});
-            this.comboHauteur.Location = new System.Drawing.Point(757, 120);
+            "32cm",
+            "42cm",
+            "52cm"});
+            this.comboHauteur.Location = new System.Drawing.Point(814, 202);
             this.comboHauteur.Margin = new System.Windows.Forms.Padding(2);
             this.comboHauteur.Name = "comboHauteur";
             this.comboHauteur.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboHauteur.Size = new System.Drawing.Size(186, 40);
+            this.comboHauteur.Size = new System.Drawing.Size(137, 40);
             this.comboHauteur.TabIndex = 20;
             this.comboHauteur.SelectedIndexChanged += new System.EventHandler(this.comboHauteur_SelectedIndexChanged);
+            // 
+            // lblHeight
+            // 
+            this.lblHeight.AutoSize = true;
+            this.lblHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeight.ForeColor = System.Drawing.Color.White;
+            this.lblHeight.Location = new System.Drawing.Point(106, 449);
+            this.lblHeight.Name = "lblHeight";
+            this.lblHeight.Size = new System.Drawing.Size(0, 37);
+            this.lblHeight.TabIndex = 21;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(49, 402);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(227, 37);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Hauteur totale:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(521, 202);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(288, 37);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Hauteur du casier :";
+            // 
+            // comboPartie
+            // 
+            this.comboPartie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPartie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboPartie.Items.AddRange(new object[] {
+            "Portes",
+            "Panneau Arrière",
+            "Panneaux Coté",
+            "Panneaux Haut/Bas"});
+            this.comboPartie.Location = new System.Drawing.Point(643, 311);
+            this.comboPartie.Margin = new System.Windows.Forms.Padding(2);
+            this.comboPartie.Name = "comboPartie";
+            this.comboPartie.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboPartie.Size = new System.Drawing.Size(308, 40);
+            this.comboPartie.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(521, 311);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 37);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Partie :";
             // 
             // userControlCommandeP2
             // 
@@ -332,6 +397,11 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::KitBox.Properties.Resources.pg2_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboPartie);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblHeight);
             this.Controls.Add(this.comboHauteur);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblDepth);
@@ -382,5 +452,10 @@
         private System.Windows.Forms.Label lblDepth;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.ComboBox comboHauteur;
+        private System.Windows.Forms.Label lblHeight;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboPartie;
+        private System.Windows.Forms.Label label3;
     }
 }
