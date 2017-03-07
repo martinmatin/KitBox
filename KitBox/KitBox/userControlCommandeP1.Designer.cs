@@ -40,22 +40,24 @@
             // 
             // comboProfondeur
             // 
-            this.comboProfondeur.FormattingEnabled = true;
+            this.comboProfondeur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboProfondeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboProfondeur.Items.AddRange(new object[] {
             "32",
             "42",
             "52",
             "62"});
-            this.comboProfondeur.Location = new System.Drawing.Point(1191, 350);
+            this.comboProfondeur.Location = new System.Drawing.Point(1191, 342);
             this.comboProfondeur.Margin = new System.Windows.Forms.Padding(2);
             this.comboProfondeur.Name = "comboProfondeur";
-            this.comboProfondeur.Size = new System.Drawing.Size(186, 28);
+            this.comboProfondeur.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboProfondeur.Size = new System.Drawing.Size(186, 45);
             this.comboProfondeur.TabIndex = 12;
-            this.comboProfondeur.Text = "32";
             // 
             // comboLargeur
             // 
-            this.comboLargeur.FormattingEnabled = true;
+            this.comboLargeur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboLargeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboLargeur.Items.AddRange(new object[] {
             "32",
             "42",
@@ -64,12 +66,12 @@
             "80",
             "100",
             "120"});
-            this.comboLargeur.Location = new System.Drawing.Point(1191, 283);
+            this.comboLargeur.Location = new System.Drawing.Point(1191, 276);
             this.comboLargeur.Margin = new System.Windows.Forms.Padding(2);
             this.comboLargeur.Name = "comboLargeur";
-            this.comboLargeur.Size = new System.Drawing.Size(186, 28);
+            this.comboLargeur.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboLargeur.Size = new System.Drawing.Size(186, 45);
             this.comboLargeur.TabIndex = 11;
-            this.comboLargeur.Text = "32";
             // 
             // pictureHide
             // 

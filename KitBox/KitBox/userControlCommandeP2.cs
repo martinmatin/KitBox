@@ -15,6 +15,7 @@ namespace KitBox
     {
         OrderManager om;
         int i = 1;
+        int index = 0;
         public userControlCommandeP2(OrderManager om)
         {
             this.om = om;
@@ -23,6 +24,8 @@ namespace KitBox
 
         private void userControlCommandeP2_Load(object sender, EventArgs e)
         {
+            om.newCasier();
+
             panelShelf7.Visible = false;
             btnGoToShelf7.Visible = false;
 
@@ -48,6 +51,9 @@ namespace KitBox
 
         private void btnAddShelf_Click(object sender, EventArgs e)
         {
+            comboHauteur.Text = "";
+            om.newCasier();
+            index++;
             i++;
             Panel p = (Panel)this.Controls.Find(("panelShelf" + i.ToString()), true).FirstOrDefault();
             p.Visible = true;
@@ -75,14 +81,10 @@ namespace KitBox
                 btnAddShelf.Visible = false;
             }
         }
-        
-        public void test()
-        {
 
-        }
         public void btnGoToShelf1_Click(object sender, EventArgs e)
         {
-
+            index = 0;
             lblWhatShelf.Text = "Etage 1";
             unselectAll();
             btnGoToShelf1.BackgroundImage = Properties.Resources.color1;
@@ -90,6 +92,7 @@ namespace KitBox
 
         public void btnGoToShelf2_Click(object sender, EventArgs e)
         {
+            index = 1;
             lblWhatShelf.Text = "Etage 2";
             unselectAll();
             btnGoToShelf2.BackgroundImage = Properties.Resources.color2;
@@ -99,6 +102,7 @@ namespace KitBox
 
         public void btnGoToShelf3_Click(object sender, EventArgs e)
         {
+            index = 2;
             lblWhatShelf.Text = "Etage 3";
             unselectAll();
             btnGoToShelf3.BackgroundImage = Properties.Resources.color3;
@@ -107,6 +111,7 @@ namespace KitBox
 
         public void btnGoToShelf4_Click(object sender, EventArgs e)
         {
+            index = 3;
             lblWhatShelf.Text = "Etage 4";
             unselectAll();
             btnGoToShelf4.BackgroundImage = Properties.Resources.color4;
@@ -115,6 +120,7 @@ namespace KitBox
 
         public void btnGoToShelf5_Click(object sender, EventArgs e)
         {
+            index = 4;
             lblWhatShelf.Text = "Etage 5";
             unselectAll();
             btnGoToShelf5.BackgroundImage = Properties.Resources.color5;
@@ -123,6 +129,7 @@ namespace KitBox
 
         public void btnGoToShelf6_Click(object sender, EventArgs e)
         {
+            index = 5;
             lblWhatShelf.Text = "Etage 6";
             unselectAll();
             btnGoToShelf6.BackgroundImage = Properties.Resources.color6;
@@ -130,6 +137,7 @@ namespace KitBox
 
         public void btnGoToShelf7_Click(object sender, EventArgs e)
         {
+            index = 6;
             lblWhatShelf.Text = "Etage 7";
             unselectAll();
             btnGoToShelf7.BackgroundImage = Properties.Resources.color7;
@@ -157,6 +165,11 @@ namespace KitBox
         {
             this.Controls.Clear();
             this.Controls.Add(new userControlCommandeP1(om));
+        }
+
+        private void comboHauteur_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            om.setCasierHeight(index, Convert.ToInt32(comboHauteur.Text));
         }
     }
 }

@@ -11,13 +11,17 @@ namespace KitBox
         private int _height;
         private int _width;
         private int _depth;
-        private string _color;
-        private List<IElement> _elements;
+        private string _color = "White";
+        private Dictionary<string, IElement> _elements;
 
-        public Casier(int width, int depth)
+        public Casier(int width, int depth, string color)
         {
-            int _widht = width;
-            int _depth = depth;
+            this._width = width;
+            this._depth = depth;
+            this._color = color;
+      
+            this._elements = new Dictionary<string, IElement>();
+
         }
 
         //Get-Set Height
@@ -29,6 +33,10 @@ namespace KitBox
         public void setHeight(int height)
         {
             this._height = height;
+            foreach (var pair in _elements)
+            {
+                pair.Value.height=height;
+            }
         }
 
         //Get Width
@@ -52,9 +60,9 @@ namespace KitBox
             return this._color;
         }
 
-        public void setColor(string color)
+        public void setColorPartieX(string partie, string color)
         {
-            this._color = color;
+            _elements[partie].color = color;
         }
 
 
@@ -64,15 +72,7 @@ namespace KitBox
             return 0;
         }
 
-        public void addElement(IElement element)
-        {
-            _elements.Add(element);
-        }
 
-        public IElement getPG()
-        {
-            return _elements[0];
-        }
         
     }
 }

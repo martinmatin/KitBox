@@ -10,12 +10,14 @@ namespace KitBox
     {
         string reference { get; }
         string code { get; }
-        int height { get; }
+        string color { get; set; }
+        int height { get; set; }
         int depth { get; }
         int width { get; }
         int stock { get; }
         double clientprice { get; }
         int percase { get; }
         string supplier { get; }
+       
     }
 }

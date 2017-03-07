@@ -9,7 +9,7 @@ namespace KitBox
     public class OrderManager
     {
         private Client _client;
-        private Command command;
+        private Command _command;
 
         public OrderManager()
         {
@@ -19,25 +19,39 @@ namespace KitBox
         //Méthodes à implémenter
         public void newOrder() {
             Command newCommand = new Command();
-            this.command = newCommand;
+            this._command = newCommand;
         }
 
         public void setCabinetDimensions(int width, int depth) {
-            this.command.getArmoire().setDimensions(width,depth);
+            this._command.getArmoire().setDimensions(width,depth);
         }
         public List<int> getCabinetDimensions()
         {
-            return this.command.getArmoire().getDimensions();
+            return this._command.getArmoire().getDimensions();
         }
 
         public void setCabinetColor(string color) {
-            this.command.getArmoire().setCabinetColor(color);
+            this._command.getArmoire().setColor(color);
         }
 
         public void setAngleIronColor(string color) {
-            this.command.getArmoire().setAngleIronColor(color);
+            this._command.getArmoire().setAngleIronColor(color);
         }
 
+        public void newCasier()
+        {
+            this._command.getArmoire().newCasier();
+        }
+
+        public void setDoorColors(int index, string colorleft, string colorright) {
+            this._command.getArmoire().setCasierPartieXColor(index, "PorteGauche", colorleft);
+            this._command.getArmoire().setCasierPartieXColor(index, "PorteDroite", colorright);
+        }
+        
+        public void setCasierHeight(int index, int height)
+        {
+            this._command.getArmoire().setCasierHeight(index, height);
+        }
 
 
         public void setDoorType(string type) {

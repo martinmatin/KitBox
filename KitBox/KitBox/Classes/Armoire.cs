@@ -12,11 +12,11 @@ namespace KitBox
         private int _width;
         private int _depth;
         private string _angleIronColor;
-        private string _cabinetColor;
+        private string _color;
 
         public Armoire()
         {
-
+            _casiers = new List<Casier>();
         }
 
 
@@ -48,22 +48,47 @@ namespace KitBox
 
 
         //Get-Set CabinetColor
-        public string getCabinetColor()
+        public string getColor()
         {
-            return this._cabinetColor;
+            return this._color;
         }
 
-        public void setCabinetColor(string color)
+        public void setColor(string color)
         {
-            this._cabinetColor = color;
+            this._color = color;
         }
 
 
         //Add new Unit
-        public void newUnit()
+        public void newCasier()
         {
-            Casier newUnit = new Casier(this._width, this._depth);
-            _casiers.Add(newUnit);
+            Casier newCasier = new Casier(this._width, this._depth, this._color);
+            _casiers.Add(newCasier);
+        }
+
+        //Remove Unit
+        public void removeCasier(int index)
+        {
+            _casiers.RemoveAt(index);
+        }
+
+        //Set CasierPartieX
+        public void setCasierPartieXColor(int index, string partie, string color)
+        {
+            _casiers[index].setColorPartieX(partie, color);
+        }
+
+        //Set CasierHeight
+        public void setCasierHeight(int index, int height)
+        {
+            _casiers[index].setHeight(height);
+        }
+
+
+        //Reset Cabinet
+        public void resetCabinet()
+        {
+            this._casiers = null;
         }
     }
 }

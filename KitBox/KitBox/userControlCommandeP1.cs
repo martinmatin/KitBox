@@ -79,7 +79,7 @@ namespace KitBox
                 if (checkUniformColor.Checked)
                     om.setCabinetColor(btnColArmoire.BackColor.ToString());
                 else
-                    om.setCabinetColor("notUnicolor");
+                    om.setCabinetColor(null);
 
                 //sets corniere color
                 om.setAngleIronColor(btnColorCorniere.BackColor.ToString());

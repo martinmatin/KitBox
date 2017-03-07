@@ -10,6 +10,8 @@ namespace KitBox
     {
         private string _reference;
         private string _code;
+        private string _color;
+
         private int _height;
         private int _depth;
         private int _width;
@@ -36,8 +38,10 @@ namespace KitBox
         }
         //Propoerty Implementation
         public string code { get { return _code; } }
+        public string color { get { return _color; } set { this._color = value; } }
+
         public string reference { get { return _reference; } }
-        public int height { get { return _height; } }
+        public int height { get { return _height; } set { this._height = value; } }
         public int depth { get { return _depth; } }
         public int width { get { return _width; } }
         public int stock { get { return _stock; } }
