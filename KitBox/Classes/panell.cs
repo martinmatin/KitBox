@@ -21,7 +21,7 @@ namespace KitBox
         private string _supplier;
         private double _clientprice;
 
-        private int _position;
+        private int _positionn;
 
         //Constructor
         public Panell(string color)
