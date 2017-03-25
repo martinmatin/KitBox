@@ -1,8 +1,9 @@
 # KitBox
-Projet informatique 2017
+**Projet informatique 2017**
 
-Julien Kessels
-Crappe Martin
-Castermans Charles
+Julien Kessels |
+Crappe Martin |
+Castermans Charles |
+Vandebusch Benjamin |
 Kabemba Christelle
-Vandebusch
+
