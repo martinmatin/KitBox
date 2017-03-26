@@ -28,3 +28,6 @@ C:\Users\Julien\Documents\Visual Studio 2015\Projects\KitBox\KitBox\obj\Debug\Ki
 C:\Users\Julien\Documents\Visual Studio 2015\Projects\KitBox\KitBox\obj\Debug\KitBox.userControlCommandeP2.resources
 C:\Users\Julien\Documents\Visual Studio 2015\Projects\KitBox\KitBox\obj\Debug\KitBox.userControlIntro.resources
 C:\Users\Julien\Documents\Visual Studio 2015\Projects\KitBox\KitBox\obj\Debug\KitBox.csproj.GenerateResource.Cache
+C:\Users\Julien\Documents\Visual Studio 2015\Projects\KitBox\KitBox\obj\Debug\KitBox.userControlClient.resources
+C:\Users\Julien\Documents\Visual Studio 2015\Projects\KitBox\KitBox\obj\Debug\KitBox.userControlClient2a.resources
+C:\Users\Julien\Documents\Visual Studio 2015\Projects\KitBox\KitBox\obj\Debug\KitBox.userControlMagasinier.resources

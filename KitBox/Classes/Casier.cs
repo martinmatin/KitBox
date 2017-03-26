@@ -43,13 +43,13 @@ namespace KitBox
             {
                 if (this._width.Equals(62))
                 {
-                    pg = new Porte(this._color, this._width);
-                    pd = new Porte(this._color, (this._width / 2 - 2));
+                    pg = new Porte(this._color, (this._width / 2 - 2),this._height);
+                    pd = new Porte(this._color, (this._width / 2 - 2),this._height);
                 }
                 else
                 {
-                    pg = new Porte(this._color, this._width);
-                    pd = new Porte(this._color, (this._width / 2 - 4));
+                    pg = new Porte(this._color, (this._width / 2 - 4),this._height);
+                    pd = new Porte(this._color, (this._width / 2 - 4),this._height);
                 }
 
                 _elements.Add("DL", pg);

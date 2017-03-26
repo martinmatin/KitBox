@@ -661,7 +661,32 @@ namespace KitBox
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Voulez-vous valider la commande?", "Validation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+           
+            Dictionary<string, int> dicOfElements = getDicOfElements();
 
+            this.BackgroundImage = null;
+            this.Controls.Clear();
+            this.Controls.Add(new userControlClient(om));
+        }
+        private Dictionary<string, int> getDicOfElements()
+        {
+            Dictionary<string, int> dicOfElements = new Dictionary<string, int>();
+            for (int x = 0; x < index+1; x++) {
+                Casier casier = this.om.getCommand().getArmoire().getCasier(x);
+                foreach(KeyValuePair<string, IElement> elem in casier.getElements())
+                {
+                    if (dicOfElements.ContainsKey(elem.Value.code))
+                    {
+                        dicOfElements[elem.Value.code]++;
+                    }
+                    else
+                    {
+                        dicOfElements.Add(elem.Value.code, 1);
+                    }
+                        
+                }
+            }
+            return dicOfElements;
         }
     }
 }

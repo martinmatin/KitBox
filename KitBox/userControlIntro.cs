@@ -51,5 +51,12 @@ namespace KitBox
                 db_manager.populateTable(table);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.BackgroundImage = null;
+            this.Controls.Clear();
+            this.Controls.Add(new userControlMagasinier());
+        }
     }
 }

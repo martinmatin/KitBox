@@ -22,10 +22,11 @@ namespace KitBox
         private string _material;
 
         //Constructor
-        public Porte(string color, int width)
+        public Porte(string color, int width, int height)
         {
             this._color = color;
             this._width = width;
+            this._height = height;
         }
 
         public void generateCode()

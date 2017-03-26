@@ -88,6 +88,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="userControlClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControlClient.Designer.cs">
+      <DependentUpon>userControlClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControlClient2a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControlClient2a.Designer.cs">
+      <DependentUpon>userControlClient2a.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControlCommandeP1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +118,12 @@
     <Compile Include="userControlIntro.Designer.cs">
       <DependentUpon>userControlIntro.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControlMagasinier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControlMagasinier.Designer.cs">
+      <DependentUpon>userControlMagasinier.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +138,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="userControlClient.resx">
+      <DependentUpon>userControlClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControlClient2a.resx">
+      <DependentUpon>userControlClient2a.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userControlCommandeP1.resx">
       <DependentUpon>userControlCommandeP1.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControlIntro.resx">
       <DependentUpon>userControlIntro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControlMagasinier.resx">
+      <DependentUpon>userControlMagasinier.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -493,6 +520,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pg2_valider-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pg3_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pg3_button_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pg3_button_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pg2_retour_btn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pg3-a_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pg3-a_validerbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mag-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mag_buttona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mag_buttonb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mag_buttonc.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnStart = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGoToMagasinier = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -43,21 +43,21 @@
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.ForeColor = System.Drawing.Color.Transparent;
             this.btnStart.Location = new System.Drawing.Point(361, 463);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(371, 75);
             this.btnStart.TabIndex = 0;
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // button1
+            // btnGoToMagasinier
             // 
-            this.button1.Location = new System.Drawing.Point(51, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 46);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGoToMagasinier.Location = new System.Drawing.Point(51, 47);
+            this.btnGoToMagasinier.Name = "btnGoToMagasinier";
+            this.btnGoToMagasinier.Size = new System.Drawing.Size(46, 46);
+            this.btnGoToMagasinier.TabIndex = 1;
+            this.btnGoToMagasinier.UseVisualStyleBackColor = true;
+            this.btnGoToMagasinier.Click += new System.EventHandler(this.button1_Click);
             // 
             // userControlIntro
             // 
@@ -66,10 +66,10 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::KitBox.Properties.Resources.home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGoToMagasinier);
             this.Controls.Add(this.btnStart);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "userControlIntro";
             this.Size = new System.Drawing.Size(1091, 611);
             this.Load += new System.EventHandler(this.userControlIntro_Load);
@@ -80,6 +80,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGoToMagasinier;
     }
 }
