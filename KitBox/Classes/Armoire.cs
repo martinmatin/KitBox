@@ -13,21 +13,22 @@ namespace KitBox
         private int _depth;
         private string _angleIronColor;
         private string _color;
-        private bool canHaveDoors;
+        private bool _canHaveDoors;
 
         public Armoire()
         {
             _casiers = new List<Casier>();
         }
 
+        //Get-Set _canHaveDoors
         public bool getCanGetDoors()
         {
-           return this.canHaveDoors;
+           return _canHaveDoors;
         }
 
         public void setCanGetDoors(bool canHaveDoors)
         {
-            this.canHaveDoors = canHaveDoors;
+            _canHaveDoors = canHaveDoors;
         }
 
         public Casier getCasier(int index)
@@ -43,8 +44,8 @@ namespace KitBox
 
         public void setDimensions(int width, int depth)
         {
-            this._width = width;
-            this._depth = depth;
+            _width = width;
+            _depth = depth;
         }
 
 
@@ -53,31 +54,31 @@ namespace KitBox
         //Get-Set AngleIronColor
         public string getAngleIronColor()
         {
-            return this._angleIronColor;
+            return _angleIronColor;
         }
 
         public void setAngleIronColor(string color)
         {
-            this._angleIronColor = color;
+            _angleIronColor = color;
         }
 
 
         //Get-Set CabinetColor
         public string getColor()
         {
-                return this._color;
+                return _color;
         }
 
         public void setColor(string color)
         {
-            this._color = color;
+            _color = color;
         }
 
 
         //Add new Unit
         public void newCasier()
         {
-            Casier newCasier = new Casier(this._width, this._depth, this._color,this.canHaveDoors);
+            Casier newCasier = new Casier(_width, _depth, _color, _canHaveDoors);
             _casiers.Add(newCasier);
         }
 
@@ -114,7 +115,7 @@ namespace KitBox
         //Reset Cabinet
         public void resetCabinet()
         {
-            this._casiers = new List<Casier>();
+           _casiers = new List<Casier>();
         }
 
         //Generate Code
