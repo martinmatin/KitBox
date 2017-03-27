@@ -95,11 +95,19 @@
     <Compile Include="txtViewer.Designer.cs">
       <DependentUpon>txtViewer.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="userControlClient2b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControlClient2b.Designer.cs">
+      <DependentUpon>userControlClient2b.cs</DependentUpon>
+=======
     <Compile Include="userControlCheckCommande.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="userControlCheckCommande.Designer.cs">
       <DependentUpon>userControlCheckCommande.cs</DependentUpon>
+>>>>>>> 35c73d5324afa394955f7ac6559a48f9b7ba3659
     </Compile>
     <Compile Include="userControlClient.cs">
       <SubType>UserControl</SubType>
@@ -168,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControlClient2a.resx">
       <DependentUpon>userControlClient2a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControlClient2b.resx">
+      <DependentUpon>userControlClient2b.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControlCommandeP1.resx">
       <DependentUpon>userControlCommandeP1.cs</DependentUpon>
