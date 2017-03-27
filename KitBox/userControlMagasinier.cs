@@ -30,5 +30,19 @@ namespace KitBox
             this.Controls.Clear();
             this.Controls.Add(new userControlCommandeP1(null));
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.BackgroundImage = null;
+            this.Controls.Clear();
+            this.Controls.Add(new userControlStock());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.BackgroundImage = null;
+            this.Controls.Clear();
+            this.Controls.Add(new userControlCheckCommande());
+        }
     }
 }
