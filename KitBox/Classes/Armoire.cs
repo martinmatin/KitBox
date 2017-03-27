@@ -8,6 +8,7 @@ namespace KitBox
 {
     public class Armoire
     {
+        //changement gittttt
         private List<Casier> _casiers;
         private int _width;
         private int _depth;
