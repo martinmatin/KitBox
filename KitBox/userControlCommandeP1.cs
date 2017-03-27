@@ -129,6 +129,13 @@ namespace KitBox
                 lblNoDoors.Visible = false;
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.BackgroundImage = null;
+            this.Controls.Clear();
+            this.Controls.Add(new userControlIntro());
+        }
     }
 }
 

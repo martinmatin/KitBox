@@ -95,6 +95,12 @@
     <Compile Include="txtViewer.Designer.cs">
       <DependentUpon>txtViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControlCheckCommande.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControlCheckCommande.Designer.cs">
+      <DependentUpon>userControlCheckCommande.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControlClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,12 @@
     <Compile Include="userControlMagasinier.Designer.cs">
       <DependentUpon>userControlMagasinier.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControlStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControlStock.Designer.cs">
+      <DependentUpon>userControlStock.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="txtViewer.resx">
       <DependentUpon>txtViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControlCheckCommande.resx">
+      <DependentUpon>userControlCheckCommande.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControlClient.resx">
       <DependentUpon>userControlClient.cs</DependentUpon>
@@ -165,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControlMagasinier.resx">
       <DependentUpon>userControlMagasinier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControlStock.resx">
+      <DependentUpon>userControlStock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
