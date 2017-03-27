@@ -17,5 +17,5 @@ namespace KitBox
         void generateCode();
     }
 
-    //Bonjour commentaire inutilen!!!!
+    //Nouveau commentaire 10:53
 }
