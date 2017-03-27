@@ -8,43 +8,48 @@ namespace KitBox
 {
     public class Panell : IElement
     {
-        private string _reference;
         private string _code;
         private string _color;
-        private string _pos;
+        private string _orientation;
 
         private int _height;
         private int _depth;
         private int _width;
-        private int _stock; //c'est plutot une variable de classe??
-        private int _percase;
-        private string _supplier;
-        private double _clientprice;
 
         private int _position;
 
+
         //Constructor
-        public Panell(string color)
+        public Panell(int height, int depth, int width, string orientation,string color)
         {
             this._color = color;
+            this._height = height;
+            this._depth = depth;
+            this._width = width;
+            this._orientation = orientation;
         }
 
         public void generateCode()
         {
-            this._code = "abc";
+            _code = "";
+            if (_orientation == "AR")
+            { _code += "PAR" + _height + _width + _color; }
+
+            else if (_orientation == "GD")
+            { _code += "PAG" + _height + _depth + _color; }
+
+            else if (_orientation == "HB")
+            { _code += "PAH" + _depth + _width + _color; }
+
+
         }
         //Propoerty Implementation
         public string code { get { return _code; } }
         public string color { get { return _color; } set { this._color = value; } }
 
-        public string reference { get { return _reference; } }
         public int height { get { return _height; } set { this._height = value; } }
         public int depth { get { return _depth; } }
         public int width { get { return _width; } }
-        public int stock { get { return _stock; } }
-        public int percase { get { return _percase; } }
-        public string supplier { get { return _supplier; } }
-        public double clientprice { get { return _clientprice; } }
 
         public int position { get { return _position; } }
 

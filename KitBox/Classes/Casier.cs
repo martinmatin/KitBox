@@ -59,11 +59,11 @@ namespace KitBox
 
         public void generatePanels()
         {
-            Panell PH = new Panell(this._color);
-            Panell PB = new Panell(this._color);
-            Panell PL = new Panell(this._color);
-            Panell PR = new Panell(this._color);
-            Panell PAR = new Panell(this._color);
+            Panell PH = new Panell(this._height,this._depth, this._width, "HB",this._color);
+            Panell PB = new Panell(this._height, this._depth, this._width, "HB", this._color);
+            Panell PL = new Panell(this._height, this._depth, this._width, "GD", this._color);
+            Panell PR = new Panell(this._height, this._depth, this._width, "GD", this._color);
+            Panell PAR = new Panell(this._height, this._depth, this._width, "AR", this._color);
 
             _elements.Add("PH", PH);
             _elements.Add("PB", PB);

@@ -14,6 +14,7 @@ namespace KitBox
     public partial class userControlCommandeP2 : UserControl
     {
         OrderManager om;
+        DatabaseManager dbm = new DatabaseManager();
         int i = 1;
         int index = 0;
 
@@ -399,6 +400,7 @@ namespace KitBox
 
             this.om.getCommand().getArmoire().generateCode();
             reloadSliderLocation();
+            checkStock();
 
         }
 
@@ -662,12 +664,29 @@ namespace KitBox
         {
             //MessageBox.Show("Voulez-vous valider la commande?", "Validation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
            
-            Dictionary<string, int> dicOfElements = getDicOfElements();
 
             this.BackgroundImage = null;
             this.Controls.Clear();
             this.Controls.Add(new userControlClient(om));
         }
+
+        private void checkStock()
+        {
+            Dictionary<string, int> dicOfElements = getDicOfElements();
+            List<string> missingElements = dbm.ElementsOutOfStock(dicOfElements);
+            if (missingElements.Count()>0)
+            {
+                lblMissing.Visible = true;
+                btnInfo.Visible = true;
+            }
+            else
+            {
+                lblMissing.Visible = false;
+                btnInfo.Visible = false;
+            }
+            editor editor = new editor();
+        }
+
         private Dictionary<string, int> getDicOfElements()
         {
             Dictionary<string, int> dicOfElements = new Dictionary<string, int>();
@@ -687,6 +706,13 @@ namespace KitBox
                 }
             }
             return dicOfElements;
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            txtViewer f2 = new txtViewer("CommandeP2");
+            f2.userControlCommandeP2 = this;
+            f2.ShowDialog();
         }
     }
 }

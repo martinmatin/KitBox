@@ -63,6 +63,7 @@
     <Compile Include="Classes\tasseau.cs" />
     <Compile Include="Classes\traverse.cs" />
     <Compile Include="DatabaseManager.cs" />
+    <Compile Include="editor.cs" />
     <Compile Include="Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +88,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="txtViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="txtViewer.Designer.cs">
+      <DependentUpon>txtViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="userControlClient.cs">
       <SubType>UserControl</SubType>
@@ -137,6 +144,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="txtViewer.resx">
+      <DependentUpon>txtViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControlClient.resx">
       <DependentUpon>userControlClient.cs</DependentUpon>
@@ -550,6 +560,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mag_buttonc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interoggation_point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_button_magasinier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mag-a_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
