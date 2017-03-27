@@ -13,7 +13,7 @@ namespace KitBox
     {
         private MySqlConnection connection;
 
-        public DatabaseManager() { }
+        public DatabaseManager() { } //init
 
         public void generateTable()
         {
