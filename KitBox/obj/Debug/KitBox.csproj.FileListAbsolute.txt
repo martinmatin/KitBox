@@ -74,7 +74,6 @@ C:\Users\Benj VDB\Desktop\ECAM\Projects\KitBox\KitBox\obj\Debug\KitBox.pdb
 C:\Users\Martin\Documents\ECAM\Projet informatique\BLOC3\github\KitBox\KitBox\bin\Debug\KitBox.exe.config
 C:\Users\Martin\Documents\ECAM\Projet informatique\BLOC3\github\KitBox\KitBox\obj\Debug\KitBox.exe
 C:\Users\Martin\Documents\ECAM\Projet informatique\BLOC3\github\KitBox\KitBox\obj\Debug\KitBox.pdb
-<<<<<<< HEAD
 >>>>>>> 1de261eed9ac6cf755cc1866b985ca88557a0cc5
 C:\Users\Benj VDB\Desktop\ECAM\Projects\GitHub\KitBox\KitBox\obj\Debug\KitBox.csprojResolveAssemblyReference.cache
 C:\Users\Benj VDB\Desktop\ECAM\Projects\GitHub\KitBox\KitBox\obj\Debug\KitBox.form.resources
@@ -96,10 +95,11 @@ C:\Users\Benj VDB\Desktop\ECAM\Projects\GitHub\KitBox\KitBox\bin\Debug\KitBox.ex
 C:\Users\Benj VDB\Desktop\ECAM\Projects\GitHub\KitBox\KitBox\bin\Debug\KitBox.exe
 C:\Users\Benj VDB\Desktop\ECAM\Projects\GitHub\KitBox\KitBox\bin\Debug\KitBox.pdb
 C:\Users\Benj VDB\Desktop\ECAM\Projects\GitHub\KitBox\KitBox\bin\Debug\MySql.Data.dll
-=======
 C:\Users\julie\Documents\Visual Studio 2015\Projects\KitBox\KitBox\obj\Debug\KitBox.userControlCheckCommande.resources
 C:\Users\julie\Documents\Visual Studio 2015\Projects\KitBox\KitBox\obj\Debug\KitBox.userControlStock.resources
 C:\Users\Casti\Documents\NOUVEAU\KitBox\KitBox\bin\Debug\KitBox.exe.config
 C:\Users\Casti\Documents\NOUVEAU\KitBox\KitBox\obj\Debug\KitBox.exe
 C:\Users\Casti\Documents\NOUVEAU\KitBox\KitBox\obj\Debug\KitBox.pdb
 >>>>>>> 35c73d5324afa394955f7ac6559a48f9b7ba3659
+C:\Users\Benj VDB\Desktop\ECAM\Projects\GitHub\KitBox\KitBox\obj\Debug\KitBox.userControlCheckCommande.resources
+C:\Users\Benj VDB\Desktop\ECAM\Projects\GitHub\KitBox\KitBox\obj\Debug\KitBox.userControlStock.resources

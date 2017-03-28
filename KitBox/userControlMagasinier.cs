@@ -42,7 +42,7 @@ namespace KitBox
         {
             this.BackgroundImage = null;
             this.Controls.Clear();
-            this.Controls.Add(new userControlCheckCommande());
+            //this.Controls.Add(new userControlCheckCommande());
         }
     }
 }

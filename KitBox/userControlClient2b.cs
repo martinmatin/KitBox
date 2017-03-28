@@ -27,14 +27,20 @@ namespace KitBox
 
         private void btnValidate_Click(object sender, EventArgs e)
         {
-            if (txtIdentifier.Text.Equals("") || txtPassword.Text.Equals(""))
+            if (txtTel.Text.Equals("") || txtPassword.Text.Equals("") || txtName.Text.Equals("")
+                || txtPasswordConf.Text.Equals("") || txtMail.Text.Equals(""))
             {
                 MessageBox.Show("Veuillez remplir toutes les cases.", "Erreur",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (txtPassword.Text != txtPasswordConf.Text)
+            {
+                MessageBox.Show("Les mots de passe ne corrspondent pas.", "Erreur",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else if (true /*can't login*/)
             {
-                MessageBox.Show("L'identifiant et le mot de passe ne correspondent pas.",
+                MessageBox.Show("֍ ERROR ֎",
                 "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -48,6 +54,11 @@ namespace KitBox
             this.BackgroundImage = null;
             this.Controls.Clear();
             this.Controls.Add(new userControlClient(om));
+        }
+
+        private void txtIdentifier_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
