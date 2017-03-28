@@ -63,6 +63,7 @@
             this.btnValidateClient.Size = new System.Drawing.Size(397, 106);
             this.btnValidateClient.TabIndex = 4;
             this.btnValidateClient.UseVisualStyleBackColor = false;
+            this.btnValidateClient.Click += new System.EventHandler(this.btnValidateClient_Click);
             // 
             // txtIdentifier
             // 
@@ -71,8 +72,7 @@
             this.txtIdentifier.Name = "txtIdentifier";
             this.txtIdentifier.Size = new System.Drawing.Size(354, 29);
             this.txtIdentifier.TabIndex = 5;
-            this.txtIdentifier.Text = "test";
-            // 
+            this.txtIdentifier.Text = "test";            // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -42,8 +42,5 @@ namespace KitBox
         public int height { get { return _height; } set { this._height = value; } }
         public int depth { get { return _depth; } }
         public int width { get { return _width; } }
-
-
-
     }
 }
