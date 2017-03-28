@@ -31,28 +31,5 @@ namespace KitBox
             this.Controls.Clear();
             this.Controls.Add(new userControlClient(om));
         }
-
-        private void btnValidateClient_Click(object sender, EventArgs e)
-        {
-            if (txtIdentifier.Text.Equals("") || txtPassword.Text.Equals("") || txtPasswordConfirmation.Text.Equals(""))
-            {
-                MessageBox.Show("Veuillez remplir toutes les cases.", "Erreur",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtPassword.Text != txtPasswordConfirmation.Text)
-            {
-                MessageBox.Show("Les mots de passe ne corespondent pas.", "Erreur",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (true /*e-mail déjà utilisé*/)
-            {
-                MessageBox.Show("Identiant déjà utilisé.", "Erreur",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                /*END*/
-            }
-        }
     }
 }

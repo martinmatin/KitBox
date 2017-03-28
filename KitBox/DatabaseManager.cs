@@ -15,7 +15,7 @@ namespace KitBox
 
         public DatabaseManager() { } //init
 
-        public void generateTable() //KIOO
+        public void generateTable()
         {
             connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
