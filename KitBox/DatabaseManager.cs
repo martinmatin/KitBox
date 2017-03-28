@@ -145,84 +145,6 @@ namespace KitBox
             return (total_price);
         }
 
-        public List<string> ElementsInStock(Dictionary<string, int> elements)
-        {
-            List<string> in_stock = new List<string>();
-            try
-            {
-                this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
-                connection.Open();
-                foreach (string element in elements.Keys)
-                {
-                    MySqlCommand sqlCmd1 = new MySqlCommand("SELECT stock_q FROM stock WHERE code='" + element + "'", connection);
-                    MySqlDataReader myReader = sqlCmd1.ExecuteReader();
-                    while (myReader.Read())
-                    {
-                        try
-                        {
-                            if (elements[element] < Convert.ToInt16(myReader.GetString(0)))
-                            {
-                                in_stock.Add(element);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            throw;
-                        }
-                    }
-                    myReader.Close();
-                }
-            }
-            catch (MySqlException ex)
-            {
-                throw; //voir comment on veut gérer les exceptions
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return (in_stock);
-        }
-
-        public List<string> ElementsOutOfStock(Dictionary<string, int> elements)
-        {
-            List<string> out_stock = new List<string>();
-            try
-            {
-                this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
-                connection.Open();
-                foreach (string element in elements.Keys)
-                {
-                    MySqlCommand sqlCmd1 = new MySqlCommand("SELECT stock_q FROM stock WHERE code='" + element + "'", connection);
-                    MySqlDataReader myReader = sqlCmd1.ExecuteReader();
-                    while (myReader.Read())
-                    {
-                        try
-                        {
-                            if (elements[element] > Convert.ToInt16(myReader.GetString(0)))
-                            {
-                                out_stock.Add(element);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            throw;
-                        }
-                    }
-                    myReader.Close();
-                }
-            }
-            catch (MySqlException ex)
-            {
-                throw; //voir comment on veut gérer les exceptions
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return (out_stock);
-        }
-
         public List<string> orderedParts(string order_id) //fonction à peaufiner, pour le moment la liste n'est composé que d'un élement max
         {
             this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
@@ -395,6 +317,169 @@ namespace KitBox
             Console.ReadLine();
             return liste;
 
+        }
+
+        public Dictionary<string, int> myStock(Dictionary<string, int> elements, string type)
+        {
+            Dictionary<string, int> stock = new Dictionary<string, int>();
+            int missing;
+            try
+            {
+                this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+                connection.Open();
+                foreach (string element in elements.Keys)
+                {
+                    MySqlCommand sqlCmd1 = new MySqlCommand("SELECT stock_q FROM stock WHERE code='" + element + "'", connection);
+                    MySqlDataReader myReader = sqlCmd1.ExecuteReader();
+                    while (myReader.Read())
+                    {
+                        if (type == "out")
+                        {
+                            if (elements[element] > Convert.ToInt16(myReader.GetString(0)))
+                            {
+                                missing = elements[element] - Convert.ToInt16(myReader.GetString(0));
+                                stock.Add(element, missing);
+                            }
+                        }
+                        else
+                        {
+                            if (elements[element] < Convert.ToInt16(myReader.GetString(0)))
+                            {
+                                missing = Convert.ToInt16(myReader.GetString(0)) - elements[element];
+                                stock.Add(element, missing);
+                            }
+                        }
+                    }
+                    myReader.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex);
+                Console.ReadLine();
+                throw; //voir comment on veut gérer les exceptions
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (stock);
+        }
+
+        public Dictionary<string, int> ElementsInStock(Dictionary<string, int> elements) //renvoyer dico avec clé: code, value: max dispo en bdd
+        {
+            Dictionary<string, int> in_stock = new Dictionary<string, int>();
+            in_stock = myStock(elements, "in");
+            return (in_stock);
+        }
+
+        public Dictionary<string, int> ElementsOutOfStock(Dictionary<string, int> elements)
+        {
+            Dictionary<string, int> out_stock = new Dictionary<string, int>();
+            out_stock = myStock(elements, "out");
+            return (out_stock);
+        }
+
+
+
+        public bool login(string Identifiant, string Pwd)
+        {
+            bool logged = false;
+            try
+            {
+                // Ouverture de la connexion SQL
+                this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+                connection.Open();
+
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT email, phone_number, pwd from client", connection);
+                MySqlDataReader myReader = sqlCmd1.ExecuteReader();
+                while (myReader.Read())
+                {
+                    //Console.WriteLine(myReader.Read());
+                    if ((myReader.GetString(0).ToLower() == Identifiant.ToLower() || myReader.GetString(1) == Identifiant) && myReader.GetString(2) == Pwd)
+                    {
+                        logged = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Pas ==");
+                    }
+                    Console.ReadLine();
+                }
+                connection.Close();
+            }
+            catch
+            {
+                throw;
+            }
+            return (logged);
+        }
+
+        public bool register(string Email, string PhoneNumber, string Pwd, string Address)
+        {
+            bool registred = false;
+            try
+            {
+                // Ouverture de la connexion SQL
+                this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+                connection.Open();
+
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT email, phone_number from client", connection);
+                MySqlDataReader myReader = sqlCmd1.ExecuteReader();
+                bool new_client = true;
+                while (myReader.Read())
+                {
+                    //Console.WriteLine(myReader.Read());
+                    if (myReader.GetString(0).ToLower() == Email.ToLower() || myReader.GetString(1) == PhoneNumber)
+                    {
+                        new_client = false;
+                        Console.WriteLine(myReader.GetString(0));
+                        Console.WriteLine(myReader.GetString(1));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Pas ==");
+                    }
+                    Console.ReadLine();
+                }
+                connection.Close();
+
+                if (new_client == true)
+                {
+                    // Ouverture de la connexion SQL
+                    this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+                    connection.Open();
+
+                    // Création d'une commande SQL en fonction de l'objet connection
+                    MySqlCommand cmd = this.connection.CreateCommand();
+
+                    // Requête SQL
+                    cmd.CommandText = "INSERT INTO client(email, phone_number, pwd, address) VALUES (@email, @phone_number, @pwd, @address)";
+
+                    // utilisation de l'objet contact passé en paramètre
+                    cmd.Parameters.AddWithValue("@email", Email);
+                    cmd.Parameters.AddWithValue("@phone_number", PhoneNumber);
+                    cmd.Parameters.AddWithValue("@pwd", Pwd);
+                    cmd.Parameters.AddWithValue("@address", Address);
+
+                    // Exécution de la commande SQL
+                    cmd.ExecuteNonQuery();
+
+                    // Fermeture de la connexion
+                    this.connection.Close();
+                    registred = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occured");
+                Console.WriteLine(ex);
+
+                // Gestion des erreurs :
+                // Possibilité de créer un Logger pour les exceptions SQL reçus
+                // Possibilité de créer une méthode avec un booléan en retour pour savoir si le contact à été ajouté correctement.
+            }
+            return (registred);
         }
 
 

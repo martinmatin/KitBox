@@ -58,3 +58,6 @@ C:\Users\julie\Documents\Visual Studio 2015\Projects\KitBox\KitBox\obj\Debug\Kit
 C:\Users\Casti\Documents\NOUVEAU\KitBox\KitBox\bin\Debug\KitBox.exe.config
 C:\Users\Casti\Documents\NOUVEAU\KitBox\KitBox\obj\Debug\KitBox.exe
 C:\Users\Casti\Documents\NOUVEAU\KitBox\KitBox\obj\Debug\KitBox.pdb
+C:\Users\Casti\Documents\GitHub\KitBox\KitBox\bin\Debug\KitBox.exe.config
+C:\Users\Casti\Documents\GitHub\KitBox\KitBox\obj\Debug\KitBox.exe
+C:\Users\Casti\Documents\GitHub\KitBox\KitBox\obj\Debug\KitBox.pdb
