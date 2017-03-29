@@ -62,24 +62,24 @@
     <Compile Include="Classes\porte.cs" />
     <Compile Include="Classes\tasseau.cs" />
     <Compile Include="Classes\traverse.cs" />
-    <Compile Include="DatabaseManager.cs" />
-    <Compile Include="editor.cs" />
-    <Compile Include="Form.cs">
+    <Compile Include="Classes\DatabaseManager.cs" />
+    <Compile Include="Classes\editor.cs" />
+    <Compile Include="Forms_UserControls\Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form.Designer.cs">
+    <Compile Include="Forms_UserControls\Form.Designer.cs">
       <DependentUpon>Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="formColorArmoire.cs">
+    <Compile Include="Forms_UserControls\formColorArmoire.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formColorArmoire.Designer.cs">
+    <Compile Include="Forms_UserControls\formColorArmoire.Designer.cs">
       <DependentUpon>formColorArmoire.cs</DependentUpon>
     </Compile>
-    <Compile Include="formColorCorniere.cs">
+    <Compile Include="Forms_UserControls\formColorCorniere.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formColorCorniere.Designer.cs">
+    <Compile Include="Forms_UserControls\formColorCorniere.Designer.cs">
       <DependentUpon>formColorCorniere.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -89,67 +89,67 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="txtViewer.cs">
+    <Compile Include="Forms_UserControls\txtViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="txtViewer.Designer.cs">
+    <Compile Include="Forms_UserControls\txtViewer.Designer.cs">
       <DependentUpon>txtViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControlCheckCommande.cs">
+    <Compile Include="Forms_UserControls\userControlCheckCommande.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControlCheckCommande.Designer.cs">
+    <Compile Include="Forms_UserControls\userControlCheckCommande.Designer.cs">
       <DependentUpon>userControlCheckCommande.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControlClient.cs">
+    <Compile Include="Forms_UserControls\userControlClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControlClient.Designer.cs">
+    <Compile Include="Forms_UserControls\userControlClient.Designer.cs">
       <DependentUpon>userControlClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControlClient2a.cs">
+    <Compile Include="Forms_UserControls\userControlClient2a.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControlClient2a.Designer.cs">
+    <Compile Include="Forms_UserControls\userControlClient2a.Designer.cs">
       <DependentUpon>userControlClient2a.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControlCommandeP1.cs">
+    <Compile Include="Forms_UserControls\userControlCommandeP1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControlCommandeP1.Designer.cs">
+    <Compile Include="Forms_UserControls\userControlCommandeP1.Designer.cs">
       <DependentUpon>userControlCommandeP1.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControlCommandeP2.cs">
+    <Compile Include="Forms_UserControls\userControlCommandeP2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControlCommandeP2.Designer.cs">
+    <Compile Include="Forms_UserControls\userControlCommandeP2.Designer.cs">
       <DependentUpon>userControlCommandeP2.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControlIntro.cs">
+    <Compile Include="Forms_UserControls\userControlIntro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControlIntro.Designer.cs">
+    <Compile Include="Forms_UserControls\userControlIntro.Designer.cs">
       <DependentUpon>userControlIntro.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControlMagasinier.cs">
+    <Compile Include="Forms_UserControls\userControlMagasinier.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControlMagasinier.Designer.cs">
+    <Compile Include="Forms_UserControls\userControlMagasinier.Designer.cs">
       <DependentUpon>userControlMagasinier.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControlStock.cs">
+    <Compile Include="Forms_UserControls\userControlStock.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControlStock.Designer.cs">
+    <Compile Include="Forms_UserControls\userControlStock.Designer.cs">
       <DependentUpon>userControlStock.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form.resx">
+    <EmbeddedResource Include="Forms_UserControls\Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formColorArmoire.resx">
+    <EmbeddedResource Include="Forms_UserControls\formColorArmoire.resx">
       <DependentUpon>formColorArmoire.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formColorCorniere.resx">
+    <EmbeddedResource Include="Forms_UserControls\formColorCorniere.resx">
       <DependentUpon>formColorCorniere.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -157,31 +157,31 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="txtViewer.resx">
+    <EmbeddedResource Include="Forms_UserControls\txtViewer.resx">
       <DependentUpon>txtViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControlCheckCommande.resx">
+    <EmbeddedResource Include="Forms_UserControls\userControlCheckCommande.resx">
       <DependentUpon>userControlCheckCommande.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControlClient.resx">
+    <EmbeddedResource Include="Forms_UserControls\userControlClient.resx">
       <DependentUpon>userControlClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControlClient2a.resx">
+    <EmbeddedResource Include="Forms_UserControls\userControlClient2a.resx">
       <DependentUpon>userControlClient2a.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControlCommandeP1.resx">
+    <EmbeddedResource Include="Forms_UserControls\userControlCommandeP1.resx">
       <DependentUpon>userControlCommandeP1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControlCommandeP2.resx">
+    <EmbeddedResource Include="Forms_UserControls\userControlCommandeP2.resx">
       <DependentUpon>userControlCommandeP2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControlIntro.resx">
+    <EmbeddedResource Include="Forms_UserControls\userControlIntro.resx">
       <DependentUpon>userControlIntro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControlMagasinier.resx">
+    <EmbeddedResource Include="Forms_UserControls\userControlMagasinier.resx">
       <DependentUpon>userControlMagasinier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControlStock.resx">
+    <EmbeddedResource Include="Forms_UserControls\userControlStock.resx">
       <DependentUpon>userControlStock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

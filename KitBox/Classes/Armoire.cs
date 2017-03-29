@@ -79,7 +79,7 @@ namespace KitBox
         //Add new Unit
         public void newCasier()
         {
-            Casier newCasier = new Casier(_width, _depth, _color, _canHaveDoors);
+            Casier newCasier = new Casier(32,_width, _depth, _color, _canHaveDoors);
             _casiers.Add(newCasier);
         }
 

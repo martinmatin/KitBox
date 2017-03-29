@@ -16,9 +16,6 @@ namespace KitBox
         private int _depth;
         private int _width;
 
-        private int _position;
-
-
         //Constructor
         public Panell(int height, int depth, int width, string orientation,string color)
         {
@@ -33,14 +30,20 @@ namespace KitBox
         {
             _code = "";
             if (_orientation == "AR")
-            { _code += "PAR" + _height + _width + _color; }
+            { _code += "PAR" + _height + _width; }
 
             else if (_orientation == "GD")
-            { _code += "PAG" + _height + _depth + _color; }
+            { _code += "PAG" + _height + _depth; }
 
             else if (_orientation == "HB")
-            { _code += "PAH" + _depth + _width + _color; }
+            { _code += "PAH" + _depth + _width; }
 
+            if (this._color.Contains("White"))
+                _code += "BL";
+            else if (this._color.Contains("Brown"))
+                _code += "BR";
+            else if (this._color.Contains("Aqua"))
+                _code += "VE";
 
         }
         //Propoerty Implementation
@@ -51,7 +54,6 @@ namespace KitBox
         public int depth { get { return _depth; } }
         public int width { get { return _width; } }
 
-        public int position { get { return _position; } }
 
     }
 }
