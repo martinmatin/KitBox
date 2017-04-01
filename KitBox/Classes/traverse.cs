@@ -32,11 +32,11 @@ namespace KitBox
             {
                 _code += "G" + _depth.ToString();
             }
-            else if (_orientation == "Ar")
+            else if (_orientation == "AR")
             {
                 _code += "R" + _width.ToString();
             }
-            else if (_orientation == "Av")
+            else if (_orientation == "AV")
             {
                 _code += "F" + _width.ToString();
             }

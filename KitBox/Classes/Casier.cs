@@ -15,8 +15,9 @@ namespace KitBox
         private bool canHaveDoors;
         private Dictionary<string, IElement> _elements;
 
-        public Casier(int width, int depth, string color, bool canHaveDoors)
+        public Casier(int height, int width, int depth, string color, bool canHaveDoors)
         {
+            this._height = height;
             this._width = width;
             this._depth = depth;
             this.canHaveDoors = canHaveDoors;
@@ -33,6 +34,9 @@ namespace KitBox
 
             //Generating 5 Panels
             generatePanels();
+
+            //Generating 4 Traverses
+            generateTraverses();
         }
 
         public void generateDoors()
@@ -43,13 +47,13 @@ namespace KitBox
             {
                 if (this._width.Equals(62))
                 {
-                    pg = new Porte(this._color, (this._width / 2 - 2),this._height);
-                    pd = new Porte(this._color, (this._width / 2 - 2),this._height);
+                    pg = new Porte(this._color, (this._width / 2 + 1),this._height);
+                    pd = new Porte(this._color, (this._width / 2 + 1),this._height);
                 }
                 else
                 {
-                    pg = new Porte(this._color, (this._width / 2 - 4),this._height);
-                    pd = new Porte(this._color, (this._width / 2 - 4),this._height);
+                    pg = new Porte(this._color, (this._width / 2 + 2),this._height);
+                    pd = new Porte(this._color, (this._width / 2 + 2),this._height);
                 }
 
                 _elements.Add("DL", pg);
@@ -59,10 +63,10 @@ namespace KitBox
 
         public void generatePanels()
         {
-            Panell PH = new Panell(this._height,this._depth, this._width, "HB",this._color);
-            Panell PB = new Panell(this._height, this._depth, this._width, "HB", this._color);
-            Panell PL = new Panell(this._height, this._depth, this._width, "GD", this._color);
-            Panell PR = new Panell(this._height, this._depth, this._width, "GD", this._color);
+            Panell PH  = new Panell(this._height,this._depth, this._width, "HB",this._color);
+            Panell PB  = new Panell(this._height, this._depth, this._width, "HB", this._color);
+            Panell PL  = new Panell(this._height, this._depth, this._width, "GD", this._color);
+            Panell PR  = new Panell(this._height, this._depth, this._width, "GD", this._color);
             Panell PAR = new Panell(this._height, this._depth, this._width, "AR", this._color);
 
             _elements.Add("PH", PH);
@@ -70,10 +74,23 @@ namespace KitBox
             _elements.Add("PL", PL);
             _elements.Add("PR", PR);
             _elements.Add("PAR", PAR);
+        }
+
+        public void generateTraverses()
+        {
+            Traverse TAV = new Traverse(0, 0          , this._width, "AV");
+            Traverse TAR = new Traverse(0, 0          , this._width, "AR");
+            Traverse TG  = new Traverse(0, this._depth, 0          , "G" );
+            Traverse TD  = new Traverse(0, this._depth, 0          , "D" );
 
 
+            _elements.Add("TAV", TAV);
+            _elements.Add("TAR", TAR);
+            _elements.Add("TG", TG);
+            _elements.Add("TD", TD);
 
         }
+
         public IElement getElement(string key)
         {
             return this._elements[key];
@@ -122,6 +139,31 @@ namespace KitBox
         public void setColorPartieX(string partie, string color)
         {
             _elements[partie].color = color;
+            int countVE = 0;
+            coupelle coup = new coupelle();
+            foreach (KeyValuePair<string, IElement> elem in _elements)
+            {
+                if ((elem.Key.Contains("DL")) || (elem.Key.Contains("DR"))){
+                    if (elem.Value.color.Contains("Aqua"))
+                    {
+                        countVE++;
+                    }
+                }
+            }
+            if (_elements.ContainsKey("COUPEL1"))
+            {
+                _elements.Remove("COUPEL1");
+            }
+            if (_elements.ContainsKey("COUPEL2"))
+            {
+                _elements.Remove("COUPEL2");
+            }
+            for (int x = 1; x < countVE+1; x++)
+            {
+                _elements.Add("COUPEL"+x.ToString(),coup);
+            }
+
+          
         }
 
         public void generateCode()
