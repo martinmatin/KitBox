@@ -463,6 +463,16 @@ namespace KitBox.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pg3_a_background1 {
+            get {
+                object obj = ResourceManager.GetObject("pg3-a_background1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pg3_a_validerbutton {
             get {
                 object obj = ResourceManager.GetObject("pg3-a_validerbutton", resourceCulture);

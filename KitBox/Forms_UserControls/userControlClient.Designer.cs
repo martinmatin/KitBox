@@ -41,9 +41,10 @@
             this.btnSignup.FlatAppearance.BorderSize = 0;
             this.btnSignup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignup.Location = new System.Drawing.Point(291, 266);
+            this.btnSignup.Location = new System.Drawing.Point(1412, 510);
+            this.btnSignup.Margin = new System.Windows.Forms.Padding(6);
             this.btnSignup.Name = "btnSignup";
-            this.btnSignup.Size = new System.Drawing.Size(152, 96);
+            this.btnSignup.Size = new System.Drawing.Size(304, 185);
             this.btnSignup.TabIndex = 0;
             this.btnSignup.UseVisualStyleBackColor = false;
             this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
@@ -55,9 +56,10 @@
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(691, 266);
+            this.btnLogin.Location = new System.Drawing.Point(588, 510);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(6);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(152, 96);
+            this.btnLogin.Size = new System.Drawing.Size(304, 185);
             this.btnLogin.TabIndex = 1;
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -70,16 +72,17 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 44);
+            this.button1.Location = new System.Drawing.Point(0, 85);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 51);
+            this.button1.Size = new System.Drawing.Size(304, 98);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // userControlClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KitBox.Properties.Resources.pg3_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -87,8 +90,9 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnSignup);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "userControlClient";
-            this.Size = new System.Drawing.Size(1091, 611);
+            this.Size = new System.Drawing.Size(2182, 1175);
             this.Load += new System.EventHandler(this.userControlClient_Load);
             this.ResumeLayout(false);
 

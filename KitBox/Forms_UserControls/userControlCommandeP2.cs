@@ -14,6 +14,8 @@ namespace KitBox
     public partial class userControlCommandeP2 : UserControl
     {
         OrderManager om;
+        editor edit = new editor();
+
         DatabaseManager dbm = new DatabaseManager();
         int i = 1;
         int index = 0;
@@ -688,6 +690,7 @@ namespace KitBox
             Dictionary<string, int> dicOfElements = getDicOfElements();
             Dictionary<string, int> missingElements = dbm.ElementsInStock(dicOfElements)[1];
             Dictionary<string, int> dispElements = dbm.ElementsInStock(dicOfElements)[0];
+            edit.printMissing(missingElements);
             L.Add(dicOfElements);
             L.Add(dispElements);
             L.Add(missingElements);

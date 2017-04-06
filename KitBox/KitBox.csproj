@@ -143,6 +143,18 @@
     <Compile Include="Forms_UserControls\userControlStock.Designer.cs">
       <DependentUpon>userControlStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_UserControls\userControlClient2b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms_UserControls\userControlClient2b.Designer.cs">
+      <DependentUpon>userControlClient2b.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_UserControls\userControlValidation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms_UserControls\userControlValidation.Designer.cs">
+      <DependentUpon>userControlValidation.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms_UserControls\Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +163,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_UserControls\formColorCorniere.resx">
       <DependentUpon>formColorCorniere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_UserControls\userControlClient2b.resx">
+      <DependentUpon>userControlClient2b.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_UserControls\userControlValidation.resx">
+      <DependentUpon>userControlValidation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -587,6 +605,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mag-a_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pg3-a_background1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

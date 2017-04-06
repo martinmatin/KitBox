@@ -41,7 +41,7 @@ namespace KitBox
 
         private void userControlIntro_Load(object sender, EventArgs e)
         {
-            /*
+            
             DatabaseManager db_manager = new DatabaseManager();
             db_manager.generateTable();
 
@@ -50,7 +50,7 @@ namespace KitBox
             {
                 db_manager.populateTable(table);
             }
-            */
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace KitBox
     public partial class userControlClient2a : UserControl
     {
         OrderManager om;
-
+        DatabaseManager dbm = new DatabaseManager();
         public userControlClient2a(OrderManager om)
         {
             this.om = om;
@@ -30,6 +30,32 @@ namespace KitBox
             this.BackgroundImage = null;
             this.Controls.Clear();
             this.Controls.Add(new userControlClient(om));
+        }
+
+        private void txtIdentifier_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnValidateClient_Click(object sender, EventArgs e)
+        {
+            om.newClient(txtIdentifier.Text, txtIdentifier.Text, "3", "4");
+            if (txtIdentifier.Text.Equals("") || txtPassword.Text.Equals(""))
+            {
+                MessageBox.Show("Veuillez remplir toutes les cases.", "Erreur",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (dbm.login(txtIdentifier.Text,txtPassword.Text)==false)
+            {
+                MessageBox.Show("֍ ERROR ֎",
+                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.BackgroundImage = null;
+                this.Controls.Clear();
+                this.Controls.Add(new userControlValidation(om));
+            }
         }
     }
 }
