@@ -14,11 +14,20 @@ namespace KitBox
     public partial class txtViewer : Form
     {
         userControlCommandeP2 uc;
+        userControlValidation ucV;
+
         string from;
+
         public userControlCommandeP2 userControlCommandeP2
         {
             get { return uc; }
             set { uc = value; }
+        }
+
+        public userControlValidation userControlValidation
+        {
+            get { return ucV; }
+            set { ucV = value; }
         }
 
         public txtViewer(string from)
@@ -35,12 +44,27 @@ namespace KitBox
 
         public void ReadFile()
         {
-            TextReader reader = File.OpenText("missing.txt");
+            TextReader reader;
             if(from.Equals("CommandeP2"))
             {
                 reader = File.OpenText("missing.txt");
+                txtBox.Text = reader.ReadToEnd();
+                reader.Close();
             }
-            txtBox.Text = reader.ReadToEnd();
+            else if (from.Equals("Validation"))
+            {
+                lblWhat.Text = "Résumé de la commande";
+                reader = File.OpenText("valid2.txt");
+                txtBox.Text = reader.ReadToEnd();
+                reader.Close();
+            }
+
+        }
+
+
+        private void txtViewer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //File.Delete(@"missing.txt");
         }
     }
 }

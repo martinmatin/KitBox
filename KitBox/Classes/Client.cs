@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace KitBox
 {
-    class Client
+    public class Client
     {
-        private string _name;
-        private string _email;
-        private string _client_id;
-        private string _command_id;
+        public string _name;
+        public string _email;
+        public string _client_id;
+        public string _command_id;
 
         public Client(string name, string email, string client_id, string command_id)
         {

@@ -32,7 +32,7 @@
             this.btnValidateClient = new System.Windows.Forms.Button();
             this.txtIdentifier = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtPasswordConfirmation = new System.Windows.Forms.TextBox();
+            this.lblLogin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -43,9 +43,10 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(3, 75);
+            this.button1.Location = new System.Drawing.Point(6, 144);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 51);
+            this.button1.Size = new System.Drawing.Size(304, 98);
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -58,55 +59,61 @@
             this.btnValidateClient.FlatAppearance.BorderSize = 0;
             this.btnValidateClient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnValidateClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnValidateClient.Location = new System.Drawing.Point(359, 482);
+            this.btnValidateClient.Location = new System.Drawing.Point(718, 927);
+            this.btnValidateClient.Margin = new System.Windows.Forms.Padding(6);
             this.btnValidateClient.Name = "btnValidateClient";
-            this.btnValidateClient.Size = new System.Drawing.Size(397, 106);
+            this.btnValidateClient.Size = new System.Drawing.Size(794, 204);
             this.btnValidateClient.TabIndex = 4;
             this.btnValidateClient.UseVisualStyleBackColor = false;
+            this.btnValidateClient.Click += new System.EventHandler(this.btnValidateClient_Click);
             // 
             // txtIdentifier
             // 
             this.txtIdentifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentifier.Location = new System.Drawing.Point(580, 229);
+            this.txtIdentifier.Location = new System.Drawing.Point(1160, 440);
+            this.txtIdentifier.Margin = new System.Windows.Forms.Padding(6);
             this.txtIdentifier.Name = "txtIdentifier";
-            this.txtIdentifier.Size = new System.Drawing.Size(354, 29);
+            this.txtIdentifier.Size = new System.Drawing.Size(704, 51);
             this.txtIdentifier.TabIndex = 5;
             this.txtIdentifier.Text = "test";
+            this.txtIdentifier.TextChanged += new System.EventHandler(this.txtIdentifier_TextChanged);
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(580, 313);
+            this.txtPassword.Location = new System.Drawing.Point(1160, 602);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(6);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(354, 29);
+            this.txtPassword.Size = new System.Drawing.Size(704, 51);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.Text = "test";
             // 
-            // txtPasswordConfirmation
+            // lblLogin
             // 
-            this.txtPasswordConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPasswordConfirmation.Location = new System.Drawing.Point(580, 399);
-            this.txtPasswordConfirmation.Name = "txtPasswordConfirmation";
-            this.txtPasswordConfirmation.PasswordChar = '*';
-            this.txtPasswordConfirmation.Size = new System.Drawing.Size(354, 29);
-            this.txtPasswordConfirmation.TabIndex = 7;
-            this.txtPasswordConfirmation.Text = "test";
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Location = new System.Drawing.Point(924, 220);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(202, 79);
+            this.lblLogin.TabIndex = 7;
+            this.lblLogin.Text = "Login";
             // 
             // userControlClient2a
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KitBox.Properties.Resources.pg3_a_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.txtPasswordConfirmation);
+            this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtIdentifier);
             this.Controls.Add(this.btnValidateClient);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "userControlClient2a";
-            this.Size = new System.Drawing.Size(1091, 611);
+            this.Size = new System.Drawing.Size(2182, 1175);
             this.Load += new System.EventHandler(this.userControlClient2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -119,6 +126,6 @@
         private System.Windows.Forms.Button btnValidateClient;
         private System.Windows.Forms.TextBox txtIdentifier;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtPasswordConfirmation;
+        private System.Windows.Forms.Label lblLogin;
     }
 }

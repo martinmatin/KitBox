@@ -22,7 +22,9 @@ namespace KitBox
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-
+            this.BackgroundImage = null;
+            this.Controls.Clear();
+            this.Controls.Add(new userControlClient2b(om));
 
         }
 

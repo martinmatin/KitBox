@@ -249,7 +249,7 @@ namespace KitBox
 
             foreach (string element in elements.Keys)
             {
-                if (elements[element] < Convert.ToInt16(ElementQuantity(element)))
+                if (elements[element] <= Convert.ToInt16(ElementQuantity(element)))
                 {
                     available_stock.Add(element, elements[element]);
                 }

@@ -22,6 +22,16 @@ namespace KitBox
             this._command = newCommand;
         }
 
+        public void newClient(string name,string email, string id, string commandId)
+        {
+            Client cl = new Client(name, email, id, commandId);
+            _client = cl;
+        }
+        public Client getClient()
+        {
+            return _client;
+        }
+
         public Command getCommand()
         {
             return this._command;

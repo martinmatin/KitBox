@@ -16,7 +16,17 @@ namespace KitBox
 
         public void printMissing(Dictionary<string, int> missingPieces)
         {
+            string txt_missing ="missing" + ".txt";
+            string txt_inside = "";
 
+            File.WriteAllText(txt_missing, "");
+
+            foreach (var item in missingPieces)
+            {
+                txt_inside += " - " + (item.Key) + " - " + (item.Value) + "\r\n";
+            }
+            File.WriteAllText(txt_missing, txt_inside);
+            
         }
 
         public void printBill(Dictionary<string,string> infos, Dictionary<string, int> pieceManquante, Dictionary<string , int> pieceDisponible)
@@ -47,7 +57,7 @@ namespace KitBox
                         + "Signature vendeur:                   Signature client: ";
 
 
-            string txt_client = infos["num"] + "_client" + ".txt";
+            string txt_client = "valid1.txt";
 
             File.WriteAllText(txt_client, content_client);
 
@@ -104,8 +114,7 @@ namespace KitBox
 
 
 
-            string txt_magasin = infos["num"] + "_magasin" + ".txt";
-
+            string txt_magasin = "valid2.txt";
             File.WriteAllText(txt_magasin, content_magasin);
 
 

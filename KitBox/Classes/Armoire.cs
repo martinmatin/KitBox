@@ -37,6 +37,10 @@ namespace KitBox
             return _casiers[index];
         }
 
+        public int casierCount()
+        {
+            return _casiers.Count();
+        }
         //Get-Set Dimensions
         public List<int> getDimensions()
         {

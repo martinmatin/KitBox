@@ -9,7 +9,7 @@ namespace KitBox
     public class Command
     {
         private Armoire _armoire;
-        private DateTime _date;
+        private string _date;
         private double _price;
 
         public Command(){
@@ -22,6 +22,10 @@ namespace KitBox
             return 0.00;
         }
 
+        public void setDate(string datee)
+        {
+            _date = datee;
+        }
         public void newCabinet()
         {
 

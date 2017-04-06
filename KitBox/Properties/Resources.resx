@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="phWpbWprWdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phWpbWprWdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="phWpbBprBdlGdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbBprBdlGdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,14 +130,14 @@
   <data name="phWpbBprWdlGdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbBprWdlGdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="changeColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\changeColor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pg2_plusbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pg2_plusbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="color1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\color1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phWpbWprWdlWdrW1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phWpbWprWdlWdrW1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phWpbWprBdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phWpbWprBdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="test1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\test1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -153,9 +150,6 @@
   </data>
   <data name="phWpbWprBdlNdrN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbWprBdlNdrN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mag-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mag-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phBpbWprWdlBdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprWdlBdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +175,8 @@
   <data name="colorP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\colorP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mag-a_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mag-a_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mag_buttona" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mag_buttona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,6 +226,9 @@
   <data name="pg3-a_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pg3-a_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="phBpbBprWdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phBpbBprWdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="plus_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -243,6 +240,9 @@
   </data>
   <data name="color3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\color3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phWpbBprWdlNdrN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phWpbBprWdlNdrN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phWpbWprWdlGdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbWprWdlGdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,6 +286,9 @@
   <data name="phWpbBprBdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbBprBdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="phBpbWprBdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phBpbWprBdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="phBpbWprWdlBdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprWdlBdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -313,14 +316,14 @@
   <data name="pg2_valider-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pg2_valider-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phBpbBprBdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phBpbBprBdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="phWpbBprBdlWdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbBprBdlWdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="color" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phBpbWprBdlGdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phBpbWprBdlGdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phWpbWprWdlBdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phWpbWprWdlBdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phWpbWprWdlNdrN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbWprWdlNdrN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -349,11 +352,11 @@
   <data name="phBpbBprBdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbBprBdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phWpbWprWdlBdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phWpbWprWdlBdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phBpbBprBdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phBpbBprBdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phWpbWprWdlBdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phWpbWprWdlBdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phWpbWprWdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phWpbWprWdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phWpbBprWdlGdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbBprWdlGdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -376,11 +379,11 @@
   <data name="phBpbBprWdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbBprWdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phBpbBprWdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phBpbBprWdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phBpbWprBdlGdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phBpbWprBdlGdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phBpbWprBdlNdrN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprBdlNdrN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -391,8 +394,8 @@
   <data name="phWpbWprWdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbWprWdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phBpbWprBdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phBpbWprBdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phWpbWprWdlWdrW1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phWpbWprWdlWdrW1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phBpbWprBdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprBdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -469,8 +472,8 @@
   <data name="phBpbBprBdlGdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbBprBdlGdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phWpbWprBdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phWpbWprBdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phWpbWprWdlBdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phWpbWprWdlBdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phBpbBprBdlWdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbBprBdlWdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -478,14 +481,14 @@
   <data name="phBpbBprWdlBdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbBprWdlBdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pg2_plusbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pg2_plusbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="changeColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\changeColor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phWpbWprBdlBdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbWprBdlBdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phWpbBprWdlNdrN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phWpbBprWdlNdrN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mag-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mag-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -511,7 +514,7 @@
   <data name="phBpbWprWdlNdrN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprWdlNdrN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mag-a_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mag-a_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pg3-a_background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pg3-a_background1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
