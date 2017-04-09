@@ -17,6 +17,8 @@ namespace KitBox
             InitializeComponent();
         }
 
+
+        //Bouton Retour
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.BackgroundImage = null;
@@ -24,11 +26,25 @@ namespace KitBox
             this.Controls.Add(new userControlIntro());
         }
 
+        //Bouton Creer une commande
         private void button3_Click(object sender, EventArgs e)
         {
             this.BackgroundImage = null;
             this.Controls.Clear();
             this.Controls.Add(new userControlCommandeP1(null));
+        }
+
+        //Bouton  chercher une commande
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.BackgroundImage = null;
+            this.Controls.Clear();
+            this.Controls.Add(new userControlCommandeP1(null));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

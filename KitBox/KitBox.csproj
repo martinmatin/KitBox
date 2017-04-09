@@ -131,6 +131,12 @@
     <Compile Include="userControlMagasinier.Designer.cs">
       <DependentUpon>userControlMagasinier.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlSearchCommand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSearchCommand.Designer.cs">
+      <DependentUpon>UserControlSearchCommand.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
