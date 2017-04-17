@@ -64,15 +64,16 @@ namespace KitBox
             }
         }
 
-        public void modifyStock(string code)
+        public void modifyStock(string code, string field, string newValue)
         {
             this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
             {
                 connection.Open();
-                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT stock_q FROM stock WHERE code='" + code + "'", connection);
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT " + field + " FROM stock WHERE code='" + code + "'", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
-                int stock = 999;
+                int stock = 0;
+                double stock_ = 0.00;
                 try
                 {
                     while (myReader.Read())
@@ -80,10 +81,10 @@ namespace KitBox
 
                         try
                         {
-                            Console.WriteLine(myReader.GetString(0));
-                            Console.WriteLine(myReader.GetString(0));
+                            //Console.WriteLine(myReader.GetString(0));
+                            //Console.WriteLine(myReader.GetString(0));
                             Console.ReadLine();
-                            stock = Convert.ToInt16(myReader.GetString(0));
+                            //stock = Convert.ToInt16(myReader.GetString(0));
                         }
                         catch (Exception ex)
                         {
@@ -97,17 +98,82 @@ namespace KitBox
                     myReader.Close();
                     connection.Close();
                 }
+                try
+                {
+                    stock += Int32.Parse(newValue);
+                    connection.Open();
+                    MySqlCommand sqlCmd = new MySqlCommand("UPDATE stock SET " + field + " =" + stock + "  WHERE code='" + code + "'", connection); // attention il faut mettre les guillemets
+                    sqlCmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    stock_ += float.Parse(newValue);
+                    stock_ = (float)((int)(stock_ * 100f)) / 100f;
 
-                stock += 3;
-                connection.Open();
-                MySqlCommand sqlCmd = new MySqlCommand("UPDATE stock SET stock_q =" + stock + " WHERE code='COR56BL'", connection); // attention il faut mettre les guillemets
-                sqlCmd.ExecuteNonQuery();
+                    connection.Open();
+                    MySqlCommand sqlCmd = new MySqlCommand("UPDATE stock SET " + field + " =" + stock_ + "  WHERE code='" + code + "'", connection); // attention il faut mettre les guillemets
+                    sqlCmd.ExecuteNonQuery();
+                }
+
             }
             catch (MySqlException ex)
             {
                 //voir comment on veut gérer les exceptions
             }
         }
+
+
+
+
+        public List<string> stockDetail(string code)
+         {
+             this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+             try
+             {
+                 connection.Open();
+                 MySqlCommand sqlCmd1 = new MySqlCommand("SELECT * FROM stock WHERE code='" + code + "'", connection);
+                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
+                 string stock = "";
+                 List<string> liste = new List<string>();
+                 try
+                 {
+                     while (myReader.Read())
+                     {
+
+                         try
+                         {
+                             int i;
+                             for (i = 1; i< 4; i++)
+                             {
+                                 stock = myReader.GetString(i);
+                                 liste.Add(stock);
+                             }
+                             //liste.ForEach(Console.WriteLine);
+                             //Console.ReadLine();
+ 
+ 
+                         }
+                         catch (Exception ex)
+                         {
+                             Console.WriteLine("Erreur");
+                         }
+                     }
+                 }
+                 finally
+                 {
+                     myReader.Close();
+                     connection.Close();
+                 }
+                 return (liste);
+ 
+             }
+             catch (MySqlException ex)
+             {
+                 //voir comment on veut gérer les exceptions
+                 return null;
+             }
+         }
+ 
 
         public double totalPrice(Dictionary<string, int> elements)
         {
@@ -541,8 +607,8 @@ namespace KitBox
             liste.AddRange(orderDetails(order_id));
             liste.AddRange(orderedParts(order_id));
 
-            liste.ForEach(Console.WriteLine);
-            Console.ReadLine();
+            //liste.ForEach(Console.WriteLine);
+            //Console.ReadLine();
             return liste;
 
         }
