@@ -131,11 +131,17 @@
     <Compile Include="userControlMagasinier.Designer.cs">
       <DependentUpon>userControlMagasinier.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlSearchCommand.cs">
+    <Compile Include="userControlSearchArticle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlSearchCommand.Designer.cs">
-      <DependentUpon>UserControlSearchCommand.cs</DependentUpon>
+    <Compile Include="userControlSearchArticle.Designer.cs">
+      <DependentUpon>userControlSearchArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControlSearchCommand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControlSearchCommand.Designer.cs">
+      <DependentUpon>userControlSearchCommand.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
@@ -171,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControlMagasinier.resx">
       <DependentUpon>userControlMagasinier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControlSearchArticle.resx">
+      <DependentUpon>userControlSearchArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControlSearchCommand.resx">
+      <DependentUpon>userControlSearchCommand.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

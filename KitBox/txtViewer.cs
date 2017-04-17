@@ -42,5 +42,10 @@ namespace KitBox
             }
             txtBox.Text = reader.ReadToEnd();
         }
+
+        private void txtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
