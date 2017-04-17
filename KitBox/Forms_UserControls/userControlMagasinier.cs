@@ -35,14 +35,14 @@ namespace KitBox
         {
             this.BackgroundImage = null;
             this.Controls.Clear();
-            this.Controls.Add(new userControlStock());
+            this.Controls.Add(new userControlSearchArticle());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.BackgroundImage = null;
             this.Controls.Clear();
-            this.Controls.Add(new userControlCheckCommande());
+            this.Controls.Add(new userControlSearchCommand());
         }
     }
 }
