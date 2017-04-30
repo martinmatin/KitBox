@@ -28,10 +28,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `client` (
   `client_id` int(11) NOT NULL,
-  `email` varchar(30) DEFAULT NULL,
-  `phone_number` varchar(20) DEFAULT NULL,
+  `name` varchar(30) NOT NULL,
+--  `phone_number` varchar(20) DEFAULT NULL,
+--  `address` varchar(535) DEFAULT NULL,
   `pwd` varchar(30) NOT NULL,
-  `address` varchar(535) DEFAULT NULL
+  `email` varchar(30) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -41,7 +42,8 @@ CREATE TABLE `client` (
 CREATE TABLE `orderedpart` (
   `ordered_part_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
-  `code` varchar(20) NOT NULL
+  `code` varchar(15) NOT NULL,
+  `mult` tinyint NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
@@ -51,11 +53,12 @@ CREATE TABLE `orderedpart` (
 
 CREATE TABLE `sale` (
   `order_id` int(11) NOT NULL,
+  `client_id` int(11) NOT NULL,
   `order_date` datetime NOT NULL,
   `delivery_date` datetime NOT NULL,
   `price` decimal(8,4) NOT NULL,
-  `payed` decimal(8,4) NOT NULL,
-  `client_id` int(11) NOT NULL
+  `is_payed` decimal(8,4) NOT NULL,
+  `is_delivered` varchar(7) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -93,8 +96,11 @@ ALTER TABLE `client`
 --
 -- Index pour la table `orderedpart`
 --
+
+
 ALTER TABLE `orderedpart`
   ADD PRIMARY KEY (`ordered_part_id`);
+
 
 --
 -- Index pour la table `sale`

@@ -22,6 +22,7 @@ namespace KitBox
 
         private void btnValidateClient_Click(object sender, EventArgs e)
         {
+            string client_id = dbm.register(txtName.Text, txtIdentifier.Text, txtPassword.Text);
             if (txtIdentifier.Text.Equals("") || txtPassword.Text.Equals("") || txtConfirm.Text.Equals("") || txtName.Text.Equals(""))
             {
                 MessageBox.Show("Veuillez remplir toutes les cases.", "Erreur",
@@ -32,14 +33,14 @@ namespace KitBox
                 MessageBox.Show("Les mots de passe ne corespondent pas.", "Erreur",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (dbm.register(txtIdentifier.Text,txtName.Text, txtPassword.Text,txtName.Text)==false)
+            else if (client_id=="")
             {
                 MessageBox.Show("Identiant déjà utilisé.", "Erreur",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                om.newClient(txtIdentifier.Text, txtIdentifier.Text, "3", "4");
+                om.newClient(txtName.Text, txtIdentifier.Text, client_id, "999");
                 this.BackgroundImage = null;
                 this.Controls.Clear();
                 this.Controls.Add(new userControlValidation(om));

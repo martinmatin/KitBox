@@ -338,23 +338,25 @@ namespace KitBox
         }
 
 
-        public string login(string Identifiant, string Pwd)
+        public string[] login(string Identifiant, string Pwd)
         {
-            string logged = "";
+            string[] client_id = new string[] { "", "" };
             try
             {
                 // Ouverture de la connexion SQL
                 this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
                 connection.Open();
 
-                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT email, phone_number, pwd, client_id from client", connection);
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT client_id, name, pwd, email from client", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
                 while (myReader.Read())
                 {
                     //Console.WriteLine(myReader.Read());
-                    if ((myReader.GetString(0).ToLower() == Identifiant.ToLower() || myReader.GetString(1) == Identifiant) && myReader.GetString(2) == Pwd)
+                    if ((myReader.GetString(3).ToLower() == Identifiant.ToLower() || myReader.GetString(3) == Identifiant) && myReader.GetString(2) == Pwd)
                     {
-                        logged = myReader.GetString(3);
+                        client_id[0] = myReader.GetString(0);
+                        client_id[1] = myReader.GetString(1);
+
                     }
                     else
                     {
@@ -368,25 +370,26 @@ namespace KitBox
             {
                 throw;
             }
-            return (logged);
+            return (client_id);
         }
 
-        public bool register(string Email, string PhoneNumber, string Pwd, string Address)
+        public string register(string name, string email, string pwd)
         {
-            bool registred = false;
+           
+            string registred = "";
             try
             {
                 // Ouverture de la connexion SQL
                 this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
                 connection.Open();
 
-                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT email, phone_number from client", connection);
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT name, email from client", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
                 bool new_client = true;
                 while (myReader.Read())
                 {
                     //Console.WriteLine(myReader.Read());
-                    if (myReader.GetString(0).ToLower() == Email.ToLower() || myReader.GetString(1) == PhoneNumber)
+                    if (myReader.GetString(0).ToLower() == name.ToLower() || myReader.GetString(1) == email)
                     {
                         new_client = false;
                         Console.WriteLine(myReader.GetString(0));
@@ -410,20 +413,25 @@ namespace KitBox
                     MySqlCommand cmd = this.connection.CreateCommand();
 
                     // Requête SQL
-                    cmd.CommandText = "INSERT INTO client(email, phone_number, pwd, address) VALUES (@email, @phone_number, @pwd, @address)";
+                    cmd.CommandText = "INSERT INTO client(name, email, pwd) VALUES (@name, @email, @pwd)";
 
                     // utilisation de l'objet contact passé en paramètre
-                    cmd.Parameters.AddWithValue("@email", Email);
-                    cmd.Parameters.AddWithValue("@phone_number", PhoneNumber);
-                    cmd.Parameters.AddWithValue("@pwd", Pwd);
-                    cmd.Parameters.AddWithValue("@address", Address);
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@pwd", pwd);
 
                     // Exécution de la commande SQL
                     cmd.ExecuteNonQuery();
 
+                    MySqlCommand sqlCmd2 = new MySqlCommand("SELECT client_id from client WHERE email='" + email + "'", connection);
+                    MySqlDataReader myReader2 = sqlCmd2.ExecuteReader();
+                    while (myReader2.Read())
+                    {
+                        registred = myReader2.GetString(0);
+                    }
                     // Fermeture de la connexion
                     this.connection.Close();
-                    registred = true;
+                    //registred = true;
                 }
             }
             catch (Exception ex)
