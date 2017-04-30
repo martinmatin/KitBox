@@ -24,6 +24,9 @@ namespace KitBox
         {
             List<String> detail = dm.stockDetail(textBox1.Text);
 
+            if (detail == null)
+                return;
+
             textBox2.Text = textBox1.Text;
             textBox3.Text = detail[0];
             textBox4.Text = detail[1];

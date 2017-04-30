@@ -42,8 +42,9 @@
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(6, 140);
+            this.btnBack.Location = new System.Drawing.Point(22, 109);
             this.btnBack.Margin = new System.Windows.Forms.Padding(6);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(304, 98);
@@ -55,9 +56,10 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::KitBox.Properties.Resources.mag_buttona;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(594, 383);
             this.button1.Margin = new System.Windows.Forms.Padding(6);
@@ -71,11 +73,12 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImage = global::KitBox.Properties.Resources.mag_buttonb;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(594, 637);
+            this.button2.Location = new System.Drawing.Point(594, 628);
             this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(1024, 183);
@@ -87,9 +90,10 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImage = global::KitBox.Properties.Resources.mag_buttonc;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(594, 873);
             this.button3.Margin = new System.Windows.Forms.Padding(6);
@@ -103,10 +107,10 @@
             // 
             this.Magasin.AutoSize = true;
             this.Magasin.BackColor = System.Drawing.Color.Transparent;
-            this.Magasin.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Magasin.Location = new System.Drawing.Point(972, 168);
+            this.Magasin.Font = new System.Drawing.Font("Roboto Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Magasin.Location = new System.Drawing.Point(900, 168);
             this.Magasin.Name = "Magasin";
-            this.Magasin.Size = new System.Drawing.Size(294, 79);
+            this.Magasin.Size = new System.Drawing.Size(418, 127);
             this.Magasin.TabIndex = 9;
             this.Magasin.Text = "Magasin";
             // 
@@ -122,6 +126,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBack);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "userControlMagasinier";
             this.Size = new System.Drawing.Size(2182, 1175);
