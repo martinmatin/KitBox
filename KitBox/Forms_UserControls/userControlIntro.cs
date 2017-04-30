@@ -45,7 +45,7 @@ namespace KitBox
             DatabaseManager db_manager = new DatabaseManager();
             db_manager.generateTable();
 
-            string[] db_tables = new string[] { "client", "orderedpart", "sale", "stock", "supplier" };
+            string[] db_tables = new string[] {"stock", "supplier" };
             foreach (string table in db_tables)
             {
                 db_manager.populateTable(table);

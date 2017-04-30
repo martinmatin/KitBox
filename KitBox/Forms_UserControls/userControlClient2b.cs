@@ -39,6 +39,7 @@ namespace KitBox
             }
             else
             {
+                om.newClient(txtIdentifier.Text, txtIdentifier.Text, "3", "4");
                 this.BackgroundImage = null;
                 this.Controls.Clear();
                 this.Controls.Add(new userControlValidation(om));

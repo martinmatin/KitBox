@@ -338,6 +338,7 @@
             this.lblWidth.Size = new System.Drawing.Size(139, 51);
             this.lblWidth.TabIndex = 17;
             this.lblWidth.Text = "42 cm";
+            this.lblWidth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDepth
             // 
@@ -350,16 +351,17 @@
             this.lblDepth.Size = new System.Drawing.Size(139, 51);
             this.lblDepth.TabIndex = 18;
             this.lblDepth.Text = "42 cm";
+            this.lblDepth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnBack
             // 
             this.btnBack.BackgroundImage = global::KitBox.Properties.Resources.pg2_retour_btn;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(85, 91);
+            this.btnBack.Location = new System.Drawing.Point(85, 94);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(253, 100);
@@ -393,6 +395,7 @@
             this.lblHeight.Name = "lblHeight";
             this.lblHeight.Size = new System.Drawing.Size(0, 51);
             this.lblHeight.TabIndex = 21;
+            this.lblHeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -972,7 +975,7 @@
             // btnConfirm
             // 
             this.btnConfirm.BackgroundImage = global::KitBox.Properties.Resources.pg2_valider_button;
-            this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnConfirm.FlatAppearance.BorderSize = 0;
             this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -996,6 +999,7 @@
             this.lblPrice.Size = new System.Drawing.Size(129, 51);
             this.lblPrice.TabIndex = 34;
             this.lblPrice.Text = "100 €";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 

@@ -363,6 +363,26 @@ namespace KitBox.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap modifierStock_background {
+            get {
+                object obj = ResourceManager.GetObject("modifierStock_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap modifierStock_mettreAjour_button {
+            get {
+                object obj = ResourceManager.GetObject("modifierStock_mettreAjour_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pg1_background {
             get {
                 object obj = ResourceManager.GetObject("pg1_background", resourceCulture);
@@ -396,6 +416,16 @@ namespace KitBox.Properties {
         internal static System.Drawing.Bitmap pg2_background {
             get {
                 object obj = ResourceManager.GetObject("pg2_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pg2_background_2 {
+            get {
+                object obj = ResourceManager.GetObject("pg2_background-2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,6 +496,16 @@ namespace KitBox.Properties {
         internal static System.Drawing.Bitmap pg3_a_background1 {
             get {
                 object obj = ResourceManager.GetObject("pg3-a_background1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pg3_a_background2 {
+            get {
+                object obj = ResourceManager.GetObject("pg3-a_background2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1386,6 +1426,16 @@ namespace KitBox.Properties {
         internal static System.Drawing.Bitmap test2 {
             get {
                 object obj = ResourceManager.GetObject("test2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trouverunecommande_background {
+            get {
+                object obj = ResourceManager.GetObject("trouverunecommande_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

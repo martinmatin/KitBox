@@ -128,7 +128,7 @@
             // 
             this.btnGoToP2.BackColor = System.Drawing.Color.Transparent;
             this.btnGoToP2.BackgroundImage = global::KitBox.Properties.Resources.pg1_valider_button;
-            this.btnGoToP2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGoToP2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGoToP2.FlatAppearance.BorderSize = 0;
             this.btnGoToP2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnGoToP2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -157,7 +157,7 @@
             // btnBack
             // 
             this.btnBack.BackgroundImage = global::KitBox.Properties.Resources.pg2_retour_btn;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -187,7 +187,7 @@
             this.Controls.Add(this.comboProfondeur);
             this.Controls.Add(this.comboLargeur);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "userControlCommandeP1";
             this.Size = new System.Drawing.Size(2181, 1175);
             this.Load += new System.EventHandler(this.userControlCommandeP1_Load);

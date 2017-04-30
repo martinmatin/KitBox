@@ -179,6 +179,9 @@
     <EmbeddedResource Include="Forms_UserControls\userControlClient2b.resx">
       <DependentUpon>userControlClient2b.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_UserControls\userControlSearchArticle.resx">
+      <DependentUpon>userControlSearchArticle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_UserControls\userControlSearchCommand.resx">
       <DependentUpon>userControlSearchCommand.cs</DependentUpon>
     </EmbeddedResource>
@@ -623,6 +626,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pg3-a_background1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pg3-a_background2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pg2_background-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modifierStock_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modifierStock_mettreAjour_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trouverunecommande_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

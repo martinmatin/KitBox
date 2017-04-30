@@ -147,3 +147,4 @@ C:\Users\Charles\Documents\Ecam\3ème\Projet informatique\Projet génie logiciel
 C:\Users\Charles\Documents\Ecam\3ème\Projet informatique\Projet génie logiciel\Github clone\KitBox-1\KitBox\obj\Debug\KitBox.exe
 C:\Users\Charles\Documents\Ecam\3ème\Projet informatique\Projet génie logiciel\Github clone\KitBox-1\KitBox\obj\Debug\KitBox.pdb
 C:\Users\julie\Documents\github\KitBox\KitBox\obj\Debug\KitBox.userControlSearchCommand.resources
+C:\Users\julie\Documents\github\KitBox\KitBox\obj\Debug\KitBox.userControlSearchArticle.resources

@@ -39,19 +39,19 @@ namespace KitBox
 
         private void btnValidateClient_Click(object sender, EventArgs e)
         {
-            om.newClient(txtIdentifier.Text, txtIdentifier.Text, "3", "4");
             if (txtIdentifier.Text.Equals("") || txtPassword.Text.Equals(""))
             {
                 MessageBox.Show("Veuillez remplir toutes les cases.", "Erreur",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (dbm.login(txtIdentifier.Text,txtPassword.Text)==false)
+            else if (dbm.login(txtIdentifier.Text,txtPassword.Text)=="")
             {
                 MessageBox.Show("֍ ERROR ֎",
                 "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                om.newClient(txtIdentifier.Text, txtIdentifier.Text, dbm.login(txtIdentifier.Text, txtPassword.Text), "4");
                 this.BackgroundImage = null;
                 this.Controls.Clear();
                 this.Controls.Add(new userControlValidation(om));

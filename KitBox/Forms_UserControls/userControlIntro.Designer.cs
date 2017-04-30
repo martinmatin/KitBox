@@ -36,7 +36,7 @@
             // 
             this.btnStart.BackColor = System.Drawing.Color.Transparent;
             this.btnStart.BackgroundImage = global::KitBox.Properties.Resources.homme_button;
-            this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnStart.FlatAppearance.BorderSize = 0;
             this.btnStart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -53,10 +53,12 @@
             // btnGoToMagasinier
             // 
             this.btnGoToMagasinier.BackgroundImage = global::KitBox.Properties.Resources.home_button_magasinier;
-            this.btnGoToMagasinier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGoToMagasinier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGoToMagasinier.FlatAppearance.BorderSize = 0;
+            this.btnGoToMagasinier.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnGoToMagasinier.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnGoToMagasinier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGoToMagasinier.Location = new System.Drawing.Point(10, 16);
+            this.btnGoToMagasinier.Location = new System.Drawing.Point(62, 16);
             this.btnGoToMagasinier.Margin = new System.Windows.Forms.Padding(6);
             this.btnGoToMagasinier.Name = "btnGoToMagasinier";
             this.btnGoToMagasinier.Size = new System.Drawing.Size(286, 88);

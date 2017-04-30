@@ -8,7 +8,6 @@ namespace KitBox
 {
     public class Armoire
     {
-        //changement gittttt
         private List<Casier> _casiers;
         private int _width;
         private int _depth;
@@ -21,17 +20,10 @@ namespace KitBox
             _casiers = new List<Casier>();
         }
 
-        //Get-Set _canHaveDoors
-        public bool getCanGetDoors()
-        {
-           return _canHaveDoors;
-        }
 
-        public void setCanGetDoors(bool canHaveDoors)
-        {
-            _canHaveDoors = canHaveDoors;
-        }
 
+
+        //Get-Set Casiers
         public Casier getCasier(int index)
         {
             return _casiers[index];
@@ -41,10 +33,15 @@ namespace KitBox
         {
             return _casiers.Count();
         }
+
+
+
+
+
         //Get-Set Dimensions
         public List<int> getDimensions()
         {
-            return new List<int> {_width,_depth};
+            return new List<int> { _width, _depth };
         }
 
         public void setDimensions(int width, int depth)
@@ -52,6 +49,7 @@ namespace KitBox
             _width = width;
             _depth = depth;
         }
+
 
 
 
@@ -68,6 +66,23 @@ namespace KitBox
         }
 
 
+
+        //Get-Set _canHaveDoors
+        public bool getCanGetDoors()
+        {
+           return _canHaveDoors;
+        }
+
+        public void setCanGetDoors(bool canHaveDoors)
+        {
+            _canHaveDoors = canHaveDoors;
+        }
+
+
+
+
+
+
         //Get-Set CabinetColor
         public string getColor()
         {
@@ -78,6 +93,7 @@ namespace KitBox
         {
             _color = color;
         }
+
 
 
         //Add new Unit
@@ -93,13 +109,14 @@ namespace KitBox
             _casiers.RemoveAt(index);
         }
 
+        //Duplicate Unit
         public void duplicateCasier(int index)
         {
             _casiers.RemoveAt(_casiers.Count() - 1);
             _casiers.Add(_casiers[index]);
         }
 
-        //Set CasierPartieX
+        //Set Color of CasierPartieX
         public void setCasierPartieXColor(int index, string door, string color)
         {
             _casiers[index].setColorPartieX(door, color);
@@ -110,12 +127,12 @@ namespace KitBox
         {
             return _casiers[index].getHeight();
         }
+
         //Set CasierHeight
         public void setCasierHeight(int index, int height)
         {
             _casiers[index].setHeight(height);
         }
-
 
         //Reset Cabinet
         public void resetCabinet()
@@ -131,6 +148,5 @@ namespace KitBox
                 casier.generateCode();
             }
         }
-
     }
 }

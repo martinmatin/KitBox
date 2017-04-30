@@ -21,9 +21,9 @@ namespace KitBox
             _command_id = command_id;
         }
 
+
         public void setName(string name) {
             _name = name;
         }
-        //je ne comprends pas la fonction addClient
     }
 }

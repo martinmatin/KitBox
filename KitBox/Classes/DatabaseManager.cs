@@ -73,7 +73,7 @@ namespace KitBox
                 MySqlCommand sqlCmd1 = new MySqlCommand("SELECT " + field + " FROM stock WHERE code='" + code + "'", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
                 int stock = 0;
-                double stock_ = 0.00;
+                float stock_ = 0;
                 try
                 {
                     while (myReader.Read())
@@ -111,7 +111,7 @@ namespace KitBox
                     stock_ = (float)((int)(stock_ * 100f)) / 100f;
 
                     connection.Open();
-                    MySqlCommand sqlCmd = new MySqlCommand("UPDATE stock SET " + field + " =" + stock_ + "  WHERE code='" + code + "'", connection); // attention il faut mettre les guillemets
+                    MySqlCommand sqlCmd = new MySqlCommand("UPDATE stock SET " + field + " =" + newValue + "  WHERE code='" + code + "'", connection); // attention il faut mettre les guillemets
                     sqlCmd.ExecuteNonQuery();
                 }
 
@@ -338,23 +338,23 @@ namespace KitBox
         }
 
 
-        public bool login(string Identifiant, string Pwd)
+        public string login(string Identifiant, string Pwd)
         {
-            bool logged = false;
+            string logged = "";
             try
             {
                 // Ouverture de la connexion SQL
                 this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
                 connection.Open();
 
-                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT email, phone_number, pwd from client", connection);
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT email, phone_number, pwd, client_id from client", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
                 while (myReader.Read())
                 {
                     //Console.WriteLine(myReader.Read());
                     if ((myReader.GetString(0).ToLower() == Identifiant.ToLower() || myReader.GetString(1) == Identifiant) && myReader.GetString(2) == Pwd)
                     {
-                        logged = true;
+                        logged = myReader.GetString(3);
                     }
                     else
                     {
