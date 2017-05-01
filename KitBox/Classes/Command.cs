@@ -11,6 +11,7 @@ namespace KitBox
         private Armoire _armoire;
         private string _date;
         private double _price;
+        private bool _isPayed;
 
         public Command(){
             this._armoire = new Armoire();

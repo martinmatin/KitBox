@@ -24,7 +24,7 @@ namespace KitBox
         {
             List<String> detail = dm.stockDetail(textBox1.Text);
 
-            if (detail == null)
+            if (detail.Count==0)
                 return;
 
             textBox2.Text = textBox1.Text;
