@@ -22,7 +22,7 @@ namespace KitBox
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<String> detail = dm.stockDetail(textBox1.Text);
+            List<String> detail = dm.StockDetail(textBox1.Text);
 
             if (detail.Count==0)
                 return;
@@ -30,7 +30,8 @@ namespace KitBox
             textBox2.Text = textBox1.Text;
             textBox3.Text = detail[0];
             textBox4.Text = detail[1];
-            textBox5.Text = detail[2];
+            textBox6.Text = detail[2];
+            textBox5.Text = detail[3];
 
         }
 
@@ -48,15 +49,39 @@ namespace KitBox
         {
             this.BackgroundImage = null;
             this.Controls.Clear();
-            this.Controls.Add(new userControlIntro());
+            this.Controls.Add(new userControlMagasinier());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            dm.ModifyStock(textBox1.Text, "client_price", textBox3.Text);
+            dm.ModifyStock(textBox1.Text, "real_stock", textBox4.Text);
+            dm.ModifyStock(textBox1.Text, "virtual_stock", textBox6.Text);
+            dm.ModifyStock(textBox1.Text, "minimal_q", textBox5.Text);
 
-            dm.modifyStock(textBox1.Text, "client_price", textBox3.Text);
-            dm.modifyStock(textBox1.Text, "stock_q", textBox4.Text);
-            dm.modifyStock(textBox1.Text, "minimal_q", textBox5.Text);
+            listBoxProblem.Items.Clear();
+            List<string> missing = dm.VerifyStock();
+            foreach (string miss in missing)
+            {
+                listBoxProblem.Items.Add(miss.ToString());
+            }
+        }
+
+        private void userControlSearchArticle_Load(object sender, EventArgs e)
+        {
+            listBoxProblem.Items.Clear();
+            List<string> missing = dm.VerifyStock();
+            foreach(string miss in missing)
+            {
+                listBoxProblem.Items.Add(miss.ToString());
+            }
+        }
+
+        private void listBoxProblem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string code = listBoxProblem.GetItemText(listBoxProblem.SelectedItem);
+            textBox1.Text = code;
+            button1_Click(null, null);
         }
     }
 }

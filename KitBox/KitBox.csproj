@@ -50,20 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Armoire.cs" />
-    <Compile Include="Classes\Casier.cs" />
+    <Compile Include="Classes\Cabinet.cs" />
+    <Compile Include="Classes\Unit.cs" />
     <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\Command.cs" />
-    <Compile Include="Classes\corniere.cs" />
-    <Compile Include="Classes\coupelle.cs" />
+    <Compile Include="Classes\AngleIron.cs" />
+    <Compile Include="Classes\Shell.cs" />
     <Compile Include="Classes\IElement.cs" />
     <Compile Include="Classes\OrderManager.cs" />
-    <Compile Include="Classes\panell.cs" />
-    <Compile Include="Classes\porte.cs" />
-    <Compile Include="Classes\tasseau.cs" />
-    <Compile Include="Classes\traverse.cs" />
+    <Compile Include="Classes\Panell.cs" />
+    <Compile Include="Classes\Door.cs" />
+    <Compile Include="Classes\Tasseau.cs" />
+    <Compile Include="Classes\Traverse.cs" />
     <Compile Include="Classes\DatabaseManager.cs" />
-    <Compile Include="Classes\editor.cs" />
+    <Compile Include="Classes\Editor.cs" />
+    <Compile Include="Forms_UserControls\FormMagasinierLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_UserControls\FormMagasinierLogin.Designer.cs">
+      <DependentUpon>FormMagasinierLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_UserControls\Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,12 +113,6 @@
     <Compile Include="Forms_UserControls\txtViewer.Designer.cs">
       <DependentUpon>txtViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms_UserControls\userControlCheckCommande.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms_UserControls\userControlCheckCommande.Designer.cs">
-      <DependentUpon>userControlCheckCommande.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms_UserControls\userControlClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -149,12 +149,6 @@
     <Compile Include="Forms_UserControls\userControlMagasinier.Designer.cs">
       <DependentUpon>userControlMagasinier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms_UserControls\userControlStock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms_UserControls\userControlStock.Designer.cs">
-      <DependentUpon>userControlStock.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms_UserControls\userControlClient2b.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,6 +161,9 @@
     <Compile Include="Forms_UserControls\userControlValidation.Designer.cs">
       <DependentUpon>userControlValidation.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms_UserControls\FormMagasinierLogin.resx">
+      <DependentUpon>FormMagasinierLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_UserControls\Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,9 +193,6 @@
     <EmbeddedResource Include="Forms_UserControls\txtViewer.resx">
       <DependentUpon>txtViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms_UserControls\userControlCheckCommande.resx">
-      <DependentUpon>userControlCheckCommande.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms_UserControls\userControlClient.resx">
       <DependentUpon>userControlClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,9 +210,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_UserControls\userControlMagasinier.resx">
       <DependentUpon>userControlMagasinier.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_UserControls\userControlStock.resx">
-      <DependentUpon>userControlStock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -641,6 +632,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trouverunecommande_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning-icon-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruptureStock_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

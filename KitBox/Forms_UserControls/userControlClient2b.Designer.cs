@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Component Designer generated _code
 
         /// <summary> 
         /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
+        /// the contents of this method with the _code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -87,7 +87,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(6);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(704, 51);
-            this.txtName.TabIndex = 10;
+            this.txtName.TabIndex = 6;
             // 
             // userControlClient2b
             // 

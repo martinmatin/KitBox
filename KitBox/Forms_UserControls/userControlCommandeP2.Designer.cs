@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Component Designer generated _code
 
         /// <summary> 
         /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
+        /// the contents of this method with the _code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -405,7 +405,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(384, 51);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Hauteur du casier :";
+            this.label1.Text = "Hauteur du unit :";
             // 
             // comboPartie
             // 
@@ -489,7 +489,7 @@
             this.lblP1.Name = "lblP1";
             this.lblP1.Size = new System.Drawing.Size(214, 37);
             this.lblP1.TabIndex = 18;
-            this.lblP1.Text = "Porte Gauche";
+            this.lblP1.Text = "Door Gauche";
             // 
             // lblP2
             // 
@@ -500,7 +500,7 @@
             this.lblP2.Name = "lblP2";
             this.lblP2.Size = new System.Drawing.Size(187, 37);
             this.lblP2.TabIndex = 17;
-            this.lblP2.Text = "Porte Droite";
+            this.lblP2.Text = "Door Droite";
             // 
             // btnP12
             // 
@@ -993,12 +993,12 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(145, 908);
+            this.lblPrice.Location = new System.Drawing.Point(115, 908);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(129, 51);
+            this.lblPrice.Size = new System.Drawing.Size(189, 51);
             this.lblPrice.TabIndex = 34;
-            this.lblPrice.Text = "100 €";
+            this.lblPrice.Text = "100.00 €";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3

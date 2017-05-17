@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Windows Form Designer generated _code
 
         /// <summary>
         /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// the contents of this method with the _code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -59,7 +59,6 @@
             this.Controls.Add(this.txtBox);
             this.Name = "txtViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "txtViewer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.txtViewer_FormClosed);
             this.Load += new System.EventHandler(this.txtViewer_Load);
             this.ResumeLayout(false);

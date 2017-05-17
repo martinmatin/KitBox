@@ -7,6 +7,18 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.IO;
 
+/// <summary>
+/// Functions which need access to 'Kitbox' database in phpMyAdmin.
+/// 
+/// If first access to this program please install 'MySql.Data.MySqlClient' package via Nuget
+/// 
+/// Mamp users only:
+/// set password to root as follows: 'pwd = root' in MySqlConnection parameter.
+/// or change mamp parameters and set pwd to blank.
+/// 
+/// </summary>
+
+
 namespace KitBox
 {
     class DatabaseManager
@@ -15,6 +27,23 @@ namespace KitBox
 
         public DatabaseManager() { } //init
 
+        // check if the tables already exist in phpMyAdmin
+        public bool existTable()
+        {
+            bool exists = false;
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+            try
+            {
+                connection.Open();
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT * from stock", connection);
+                MySqlDataReader myReader = sqlCmd1.ExecuteReader();
+                exists = true;
+            }
+            catch { }
+            return exists;
+        }
+
+        //create tables in phpMyAdmin. See Kitbox\bin\Debug\kitbox.sql
         public void generateTable()
         {
             connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
@@ -36,6 +65,7 @@ namespace KitBox
             }
         }
 
+        //populate tables in phpMyAdmin. See Kitbox\bin\Debug\Table_XXX.csv
         public void populateTable(string table)
         {
             string path = "Table_" + table + ".csv";
@@ -43,10 +73,10 @@ namespace KitBox
             commandDB(cmd);
         }
 
+        //execute query given in parameter
         private void commandDB(string mysqlCmd)
         {
-            //string resp = "";
-            connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;"); //for MAMP: pwd = root
+            connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
             {
                 connection.Open();
@@ -54,17 +84,15 @@ namespace KitBox
                 sqlCmd.ExecuteNonQuery();
             }
             catch (MySqlException)
-            {
-                Console.WriteLine("Internal error occurred");
-                Console.ReadLine();
-            }
+            { }
             finally
             {
                 connection.Close();
             }
         }
 
-        public void modifyStock(string code, string field, string newValue)
+        //increase stock_q or virtual_stock in table stock
+        public void ModifyStock(string code, string field, string newValue)
         {
             this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
@@ -78,13 +106,9 @@ namespace KitBox
                 {
                     while (myReader.Read())
                     {
-
                         try
                         {
-                            //Console.WriteLine(myReader.GetString(0));
-                            //Console.WriteLine(myReader.GetString(0));
                             Console.ReadLine();
-                            //stock = Convert.ToInt16(myReader.GetString(0));
                         }
                         catch (Exception ex)
                         {
@@ -102,85 +126,74 @@ namespace KitBox
                 {
                     stock += Int32.Parse(newValue);
                     connection.Open();
-                    MySqlCommand sqlCmd = new MySqlCommand("UPDATE stock SET " + field + " =" + stock + "  WHERE code='" + code + "'", connection); // attention il faut mettre les guillemets
+                    MySqlCommand sqlCmd = new MySqlCommand("UPDATE stock SET " + field + " =" + stock + "  WHERE code='" + code + "'", connection);
                     sqlCmd.ExecuteNonQuery();
                 }
                 catch
                 {
                     stock_ += float.Parse(newValue);
                     stock_ = (float)((int)(stock_ * 100f)) / 100f;
-
                     connection.Open();
-                    MySqlCommand sqlCmd = new MySqlCommand("UPDATE stock SET " + field + " =" + newValue + "  WHERE code='" + code + "'", connection); // attention il faut mettre les guillemets
+                    MySqlCommand sqlCmd = new MySqlCommand("UPDATE stock SET " + field + " =" + newValue + "  WHERE code='" + code + "'", connection);
                     sqlCmd.ExecuteNonQuery();
                 }
 
             }
             catch (MySqlException ex)
+            { }
+        }
+
+        //get every field value from corresponding code in table stock
+        public List<string> StockDetail(string code)
+        {
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+            try
             {
-                //voir comment on veut gérer les exceptions
+                connection.Open();
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT * FROM stock WHERE code='" + code + "'", connection);
+                MySqlDataReader myReader = sqlCmd1.ExecuteReader();
+                string stock = "";
+                List<string> liste = new List<string>();
+                try
+                {
+                    while (myReader.Read())
+                    {
+
+                        try
+                        {
+                            int i;
+                            for (i = 1; i < 5; i++)
+                            {
+                                stock = myReader.GetString(i);
+                                liste.Add(stock);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Erreur");
+                        }
+                    }
+                }
+                finally
+                {
+                    myReader.Close();
+                    connection.Close();
+                }
+                return (liste);
+            }
+            catch (MySqlException ex)
+            {
+                return null;
             }
         }
 
-
-
-
-        public List<string> stockDetail(string code)
-         {
-             this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
-             try
-             {
-                 connection.Open();
-                 MySqlCommand sqlCmd1 = new MySqlCommand("SELECT * FROM stock WHERE code='" + code + "'", connection);
-                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
-                 string stock = "";
-                 List<string> liste = new List<string>();
-                 try
-                 {
-                     while (myReader.Read())
-                     {
-
-                         try
-                         {
-                             int i;
-                             for (i = 1; i< 4; i++)
-                             {
-                                 stock = myReader.GetString(i);
-                                 liste.Add(stock);
-                             }
-                             //liste.ForEach(Console.WriteLine);
-                             //Console.ReadLine();
- 
- 
-                         }
-                         catch (Exception ex)
-                         {
-                             Console.WriteLine("Erreur");
-                         }
-                     }
-                 }
-                 finally
-                 {
-                     myReader.Close();
-                     connection.Close();
-                 }
-                 return (liste);
- 
-             }
-             catch (MySqlException ex)
-             {
-                 //voir comment on veut gérer les exceptions
-                 return null;
-             }
-         }
- 
-
-        public double totalPrice(Dictionary<string, int> elements)
+        //returns total price of cabinet
+        public double TotalPrice(Dictionary<string, int> elements)
         {
-            double total_price = 0;
+            double totalPrice = 0;
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
             {
-                this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
                 connection.Open();
                 foreach (string element in elements.Keys)
                 {
@@ -190,7 +203,7 @@ namespace KitBox
                     {
                         try
                         {
-                            total_price = total_price + (Convert.ToDouble(myReader.GetString(0)) * elements[element]);
+                            totalPrice = totalPrice + (Convert.ToDouble(myReader.GetString(0)) * elements[element]);
                         }
                         catch (Exception ex)
                         {
@@ -202,26 +215,27 @@ namespace KitBox
             }
             catch (MySqlException ex)
             {
-                throw; //voir comment on veut gérer les exceptions
+                throw;
             }
             finally
             {
                 connection.Close();
             }
-            return (total_price);
+            return (totalPrice);
         }
 
-        public Dictionary<string, int> myStock(Dictionary<string, int> elements, string typee)
+        //no comment
+        public Dictionary<string, int> MyStock(Dictionary<string, int> elements, string typee)
         {
             Dictionary<string, int> stock = new Dictionary<string, int>();
             int missing;
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
             {
-                this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
                 connection.Open();
                 foreach (string element in elements.Keys)
                 {
-                    MySqlCommand sqlCmd1 = new MySqlCommand("SELECT stock_q FROM stock WHERE code='" + element + "'", connection);
+                    MySqlCommand sqlCmd1 = new MySqlCommand("SELECT real_stock FROM stock WHERE code='" + element + "'", connection);
                     MySqlDataReader myReader = sqlCmd1.ExecuteReader();
                     while (myReader.Read())
                     {
@@ -247,9 +261,7 @@ namespace KitBox
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine(ex);
-                Console.ReadLine();
-                throw; //voir comment on veut gérer les exceptions
+                throw;
             }
             finally
             {
@@ -258,111 +270,103 @@ namespace KitBox
             return (stock);
         }
 
-        /*
-        public Dictionary<string, int> ElementsInStock(Dictionary<string, int> elements) //renvoyer dico avec clé: code, value: max dispo en bdd
-        {
-            Dictionary<string, int> in_stock = new Dictionary<string, int>();
-            in_stock = myStock(elements, "in");
-            return (in_stock);
-        }
-
-        public Dictionary<string, int> ElementsOutOfStock(Dictionary<string, int> elements)
-        {
-            Dictionary<string, int> out_stock = new Dictionary<string, int>();
-            out_stock = myStock(elements, "out");
-            return (out_stock);
-        }
-        */
+        //returns the difference between real_stock and vitual_stock of an element
         public string ElementQuantity(string element)
         {
-            string quantity;
+            string quantity, quantity2;
+            MySqlConnection connection2 = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
 
             try
             {
                 this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
                 connection.Open();
-                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT stock_q FROM stock WHERE code='" + element + "'", connection);
+                connection2.Open();
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT real_stock FROM stock WHERE code='" + element + "'", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
-                if (myReader.Read())
+                MySqlCommand sqlCmd2 = new MySqlCommand("SELECT virtual_stock FROM stock WHERE code='" + element + "'", connection2);
+                MySqlDataReader myReader2 = sqlCmd2.ExecuteReader();
+                if (myReader.Read() && myReader2.Read())
                 {
                     quantity = myReader.GetString(0);
+                    quantity2 = myReader2.GetString(0);
+
                 }
                 else
                 {
-                    quantity = "0"; //Bonne idée de mettre 0 ???
+                    quantity = "0";
+                    quantity2 = "0";
+
                 }
                 myReader.Close();
+                myReader2.Close();
+
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine(ex);
-                Console.ReadLine();
-                throw; //voir comment on veut gérer les exceptions
+                throw;
             }
             finally
             {
                 connection.Close();
-            }
+                connection2.Close();
 
-            return (quantity);
+            }
+            int result = Convert.ToInt32(quantity) - Convert.ToInt32(quantity2);
+            return (result.ToString());
         }
 
+        //returns list of dictionnaries of available elements and missing elements
         public List<Dictionary<string, int>> ElementsInStock(Dictionary<string, int> elements)
         {
-            Dictionary<string, int> available_stock = new Dictionary<string, int>();
-            Dictionary<string, int> not_in_stock = new Dictionary<string, int>();
-            List<Dictionary<string, int>> elements_vs_stock = new List<Dictionary<string, int>>();
+            Dictionary<string, int> availableStock = new Dictionary<string, int>();
+            Dictionary<string, int> notInStock = new Dictionary<string, int>();
+            List<Dictionary<string, int>> elementsVsStock = new List<Dictionary<string, int>>();
 
             foreach (string element in elements.Keys)
             {
+                int i1 = elements[element];
+                int i2 = Convert.ToInt16(ElementQuantity(element));
                 if (elements[element] <= Convert.ToInt16(ElementQuantity(element)))
                 {
-                    available_stock.Add(element, elements[element]);
+                    availableStock.Add(element, elements[element]);
                 }
                 else
                 {
                     if (Convert.ToInt16(ElementQuantity(element)) != 0)
                     {
-                        available_stock.Add(element, Convert.ToInt16(ElementQuantity(element)));
-                        not_in_stock.Add(element, elements[element] - Convert.ToInt16(ElementQuantity(element)));
+                        availableStock.Add(element, Convert.ToInt16(ElementQuantity(element)));
+                        notInStock.Add(element, elements[element] - Convert.ToInt16(ElementQuantity(element)));
                     }
                     else
                     {
-                        not_in_stock.Add(element, elements[element]);
+                        notInStock.Add(element, elements[element]);
                     }
                 }
             }
-            elements_vs_stock.Add(available_stock);
-            elements_vs_stock.Add(not_in_stock);
-            return (elements_vs_stock);
+            elementsVsStock.Add(availableStock);
+            elementsVsStock.Add(notInStock);
+            return (elementsVsStock);
         }
 
-
-        public string[] login(string Identifiant, string Pwd)
+        //returns blank array if login failed, returns clientId and name is successfull login
+        public string[] Login(string Identifiant, string Pwd)
         {
-            string[] client_id = new string[] { "", "" };
+            string[] clientId = new string[] { "", "" };
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
             {
-                // Ouverture de la connexion SQL
-                this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
                 connection.Open();
-
                 MySqlCommand sqlCmd1 = new MySqlCommand("SELECT client_id, name, pwd, email from client", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
                 while (myReader.Read())
                 {
-                    //Console.WriteLine(myReader.Read());
                     if ((myReader.GetString(3).ToLower() == Identifiant.ToLower() || myReader.GetString(3) == Identifiant) && myReader.GetString(2) == Pwd)
                     {
-                        client_id[0] = myReader.GetString(0);
-                        client_id[1] = myReader.GetString(1);
-
+                        clientId[0] = myReader.GetString(0);
+                        clientId[1] = myReader.GetString(1);
                     }
                     else
-                    {
-                        Console.WriteLine("Pas ==");
-                    }
-                    Console.ReadLine();
+                    { }
                 }
                 connection.Close();
             }
@@ -370,28 +374,26 @@ namespace KitBox
             {
                 throw;
             }
-            return (client_id);
+            return (clientId);
         }
 
-        public string register(string name, string email, string pwd)
+        //registers a new client in DB
+        public string Register(string name, string email, string pwd)
         {
-           
             string registred = "";
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
             {
-                // Ouverture de la connexion SQL
-                this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
                 connection.Open();
-
                 MySqlCommand sqlCmd1 = new MySqlCommand("SELECT name, email from client", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
-                bool new_client = true;
+                bool newClient = true;
                 while (myReader.Read())
                 {
                     //Console.WriteLine(myReader.Read());
                     if (myReader.GetString(0).ToLower() == name.ToLower() || myReader.GetString(1) == email)
                     {
-                        new_client = false;
+                        newClient = false;
                         Console.WriteLine(myReader.GetString(0));
                         Console.WriteLine(myReader.GetString(1));
                     }
@@ -403,79 +405,135 @@ namespace KitBox
                 }
                 connection.Close();
 
-                if (new_client == true)
+                if (newClient == true)
                 {
-                    // Ouverture de la connexion SQL
+                    // Opens SQL connection
                     this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
                     connection.Open();
-
-                    // Création d'une commande SQL en fonction de l'objet connection
+                    // New SQL command. Depends on connection object
                     MySqlCommand cmd = this.connection.CreateCommand();
-
-                    // Requête SQL
+                    // SQL query
                     cmd.CommandText = "INSERT INTO client(name, email, pwd) VALUES (@name, @email, @pwd)";
-
-                    // utilisation de l'objet contact passé en paramètre
+                    // objects are assigned to their values
                     cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@name", name);
                     cmd.Parameters.AddWithValue("@pwd", pwd);
-
-                    // Exécution de la commande SQL
+                    // SQL command execution
                     cmd.ExecuteNonQuery();
-
                     MySqlCommand sqlCmd2 = new MySqlCommand("SELECT client_id from client WHERE email='" + email + "'", connection);
                     MySqlDataReader myReader2 = sqlCmd2.ExecuteReader();
                     while (myReader2.Read())
                     {
                         registred = myReader2.GetString(0);
                     }
-                    // Fermeture de la connexion
                     this.connection.Close();
-                    //registred = true;
                 }
             }
             catch (Exception ex)
-            {
-                Console.WriteLine("Exception occured");
-                Console.WriteLine(ex);
-
-                // Gestion des erreurs :
-                // Possibilité de créer un Logger pour les exceptions SQL reçus
-                // Possibilité de créer une méthode avec un booléan en retour pour savoir si le contact à été ajouté correctement.
-            }
+            { }
             return (registred);
         }
-    
 
-    public List<string> orderedParts(string order_id) //fonction à peaufiner, pour le moment la liste n'est composé que d'un élement max
+        //adds a line in table sale and returns the generated order_id
+        public string CreateCommand(Command command)
+        {
+            string id = "";
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = this.connection.CreateCommand();
+                cmd.CommandText = "INSERT INTO sale(client_id, order_date, delivery_date, price, is_payed, is_delivered) VALUES (@client_id, @order_date, @delivery_date, @price, @is_payed, @is_delivered)";
+                cmd.Parameters.AddWithValue("@client_id", command._clientId);
+                cmd.Parameters.AddWithValue("@order_date", command._date);
+                cmd.Parameters.AddWithValue("@delivery_date", command._deliveryDate);
+                cmd.Parameters.AddWithValue("@price", command._price);
+                cmd.Parameters.AddWithValue("@is_payed", command._isPayed.ToString());
+                cmd.Parameters.AddWithValue("@is_delivered", command._isDelivered.ToString());
+                cmd.ExecuteNonQuery();
+                MySqlCommand sqlCmd2 = new MySqlCommand("SELECT order_id from sale WHERE client_id='" + command._clientId + "'", connection);
+                MySqlDataReader myReader2 = sqlCmd2.ExecuteReader();
+                while (myReader2.Read())
+                {
+                    id = myReader2.GetString(0);
+                }
+            }
+            catch
+            { }
+            return id;
+
+        }
+
+        //creates a new line in table orderedpart
+        public void CreateOrderedPart(Dictionary<string, int> elements, string order_id)
         {
             this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
             {
                 connection.Open();
-                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT code FROM orderedpart WHERE order_id='" + order_id + "'", connection);
+                foreach (var element in elements)
+                {
+                    MySqlCommand cmd = this.connection.CreateCommand();
+                    cmd.CommandText = "INSERT INTO orderedpart(order_id, code, mult) VALUES (@order_id, @code, @mult)";
+                    cmd.Parameters.AddWithValue("@order_id", order_id);
+                    cmd.Parameters.AddWithValue("@code", element.Key);
+                    cmd.Parameters.AddWithValue("@mult", element.Value);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            { }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        //modifies the virtual and real stock of a part. Necessary when cabinet is sold
+        public void ModifyStock(bool isDelivered, Dictionary<string, int> dicOfElements)
+        {
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+            try
+            {
+                connection.Open();
+                foreach (var element in dicOfElements)
+                {
+                    MySqlCommand cmd = this.connection.CreateCommand();
+                    if (isDelivered == false)
+                        cmd.CommandText = "UPDATE stock SET virtual_stock = virtual_stock +" + element.Value + " WHERE code ='" + element.Key + "'";
+                    else
+                        cmd.CommandText = "UPDATE stock SET real_stock = real_stock -" + element.Value + " WHERE code ='" + element.Key + "'";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            { }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        //returns code and multiplier of each part of a command.
+        public Dictionary<string, int> FindPartsById(int id)
+        {
+            Dictionary<string, int> parts = new Dictionary<string, int>();
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+            try
+            {
+                connection.Open();
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT code,mult FROM orderedpart WHERE order_id='" + id + "'", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
-                string stock = "";
-                List<string> liste = new List<string>();
+                string key = "";
                 try
                 {
                     while (myReader.Read())
                     {
-
-                        try
+                        int i;
+                        for (i = 0; i < 2; i++)
                         {
-                            stock = myReader.GetString(0);
-                            liste.Add(stock);
-                            //Console.WriteLine(stock);
-                            //Console.WriteLine(liste[0]);
-                            //Console.ReadLine();
-
-
-
-                        }
-                        catch (Exception ex)
-                        {
-                            throw;
+                            if (i == 0) { key = myReader.GetString(i); }
+                            else { parts.Add(key, Convert.ToInt16(myReader.GetString(i))); }
                         }
                     }
                 }
@@ -484,153 +542,125 @@ namespace KitBox
                     myReader.Close();
                     connection.Close();
                 }
-                return (liste);
-
             }
             catch (MySqlException ex)
-            {
-                //voir comment on veut gérer les exceptions
-                return null;
-            }
+            { }
+            return (parts);
         }
 
-        /* @pre: fournir l'id de la commande
-           @post: retourne une liste de string contenant: l'id de la commande, la date de commande, la date de livraison, le prix total, le prix déjà payé et l'id du client.
-             */
-
-        public List<string> orderDetails(string order_id)
+        //returns the missing elements in stock table
+        public List<string> VerifyStock()
         {
+            List<string> missing = new List<string>();
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+            try
+            {
+                connection.Open();
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT real_stock,virtual_stock,code FROM stock", connection);
+                MySqlDataReader myReader = sqlCmd1.ExecuteReader();
+                while (myReader.Read())
+                {
+                    int real_stock = Convert.ToInt32(myReader.GetString(0));
+                    int virtual_stock = Convert.ToInt32(myReader.GetString(1));
+                    if (real_stock - 2 * virtual_stock < 0)
+                    {
+                        missing.Add(myReader.GetString(2));
+                    }
+                }
+            }
+            catch
+            { }
+            return missing;
+        }
+
+        //updates the status of payed for given command
+        public void Pay(int orderId)
+        {
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+            connection.Open();
+            MySqlCommand sqlCmd = new MySqlCommand("UPDATE sale SET is_payed = '" + "True" + "'  WHERE order_id= " + orderId, connection);
+            sqlCmd.ExecuteNonQuery();
+        }
+
+        //updates real_stock and virtual_stock fields of stock 
+        //table given the missing elements of a command
+        public int Deliver(int orderId)
+        {
+            Dictionary<string, int> dicOfElements = FindPartsById(orderId);
+            Dictionary<string, int> missingElements = ElementsInStock(dicOfElements)[1];
+            if (missingElements.Count > 0)
+                return -1;
+            this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
+            try
+            {
+                connection.Open();
+                MySqlCommand sqlCmd = new MySqlCommand("UPDATE sale SET is_delivered = '" + "True" + "'  WHERE order_id= " + orderId, connection);
+                sqlCmd.ExecuteNonQuery();
+                foreach (var element in dicOfElements)
+                {
+                    MySqlCommand cmd = this.connection.CreateCommand();
+                    cmd.CommandText = "UPDATE stock SET real_stock = real_stock -" + element.Value + " WHERE code ='" + element.Key + "'";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE stock SET virtual_stock = virtual_stock -" + element.Value + " WHERE code ='" + element.Key + "'";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            { }
+            finally
+            {
+                connection.Close();
+            }
+            return 1;
+        }
+
+        //returns every field from sale table for a given order_id
+        public Dictionary<string, string> GetCommandInfo(int order_id)
+        {
+            Dictionary<string, string> cmdInfo = new Dictionary<string, string>();
             this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
             {
                 connection.Open();
                 MySqlCommand sqlCmd1 = new MySqlCommand("SELECT * FROM sale WHERE order_id='" + order_id + "'", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
-                string stock = "";
-                List<string> liste = new List<string>();
-                try
+                while (myReader.Read())
                 {
-                    while (myReader.Read())
-                    {
-
-                        try
-                        {
-                            int i;
-                            for (i = 0; i < 6; i++)
-                            {
-                                stock = myReader.GetString(i);
-                                liste.Add(stock);
-                            }
-                            //liste.ForEach(Console.WriteLine);
-                            //Console.WriteLine(liste[0]);
-                            //Console.ReadLine();
-
-
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("Erreur");
-                        }
-                    }
+                    cmdInfo.Add("order_id", myReader.GetString(0));
+                    cmdInfo.Add("client_id", myReader.GetString(1));
+                    cmdInfo.Add("order_date", myReader.GetString(2));
+                    cmdInfo.Add("delivery_date", myReader.GetString(3));
+                    cmdInfo.Add("price", myReader.GetString(4));
+                    cmdInfo.Add("isPayed", myReader.GetString(5));
+                    cmdInfo.Add("isDelivered", myReader.GetString(6));
                 }
-                finally
-                {
-                    myReader.Close();
-                    connection.Close();
-                }
-                return (liste);
-
             }
-            catch (MySqlException ex)
-            {
-                //voir comment on veut gérer les exceptions
-                return null;
-            }
+            catch
+            { }
+            return cmdInfo;
         }
 
-
-        /*
-         pre: fournir l'ID du client
-         post: retourne une liste contenant l'email, le n° de tel, le pwd, le prenom, le nom et l'adresse.
-             */
-        public List<string> clientInfo(string client_id)
+        //returns every field from client table for a given client_id
+        public Dictionary<string, string> GetUserInfo(int clientId)
         {
+            Dictionary<string, string> userInfo = new Dictionary<string, string>();
             this.connection = new MySqlConnection("server = localhost; uid = root; database = kitbox;");
             try
             {
                 connection.Open();
-                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT * FROM client WHERE client_id='" + client_id + "'", connection);
+                MySqlCommand sqlCmd1 = new MySqlCommand("SELECT * FROM client WHERE client_id='" + clientId + "'", connection);
                 MySqlDataReader myReader = sqlCmd1.ExecuteReader();
-                string stock = "";
-                List<string> liste = new List<string>();
-                try
+                while (myReader.Read())
                 {
-                    while (myReader.Read())
-                    {
-
-                        try
-                        {
-                            int i;
-                            for (i = 1; i < 7; i++)
-                            {
-                                stock = myReader.GetString(i);
-                                liste.Add(stock);
-                            }
-                            //liste.ForEach(Console.WriteLine);
-                            //Console.ReadLine();
-
-
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("Erreur");
-                        }
-                    }
+                    userInfo.Add("client_id", myReader.GetString(0));
+                    userInfo.Add("name", myReader.GetString(1));
+                    userInfo.Add("pwd", myReader.GetString(2));
+                    userInfo.Add("email", myReader.GetString(3));
                 }
-                finally
-                {
-                    myReader.Close();
-                    connection.Close();
-                }
-                return (liste);
-
             }
-            catch (MySqlException ex)
-            {
-                //voir comment on veut gérer les exceptions
-                return null;
-            }
+            catch
+            { }
+            return userInfo;
         }
-
-
-        public List<string> printOrder(string order_id)
-        {
-
-            string client_id = orderDetails(order_id)[5];
-            //Console.WriteLine(client_id);
-
-            List<string> liste = new List<string> { };
-
-            liste.AddRange(clientInfo(client_id));
-            liste.AddRange(orderDetails(order_id));
-            liste.AddRange(orderedParts(order_id));
-
-            //liste.ForEach(Console.WriteLine);
-            //Console.ReadLine();
-            return liste;
-
-        }
-
-
-        //public 
-        //{
-        //    string cmd = "SELECT price FROM stock WHERE code='"+ code + "'";
-        //    commandDB(cmd);
-        //    return ();
-        //}
     }
 }
-
-
-//code => prix
-//code => présent

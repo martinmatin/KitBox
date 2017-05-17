@@ -8,34 +8,43 @@ namespace KitBox
 {
     public class Command
     {
-        private Armoire _armoire;
-        private string _date;
-        private double _price;
-        private bool _isPayed;
+        private Cabinet _cabinet;
+        public string _date;
+        public string _deliveryDate;
+
+        public double _price;
+        public bool _isPayed;
+        public bool _isDelivered;
+        public string _orderId;
+        public string _clientId;
 
         public Command(){
-            this._armoire = new Armoire();
+            this._cabinet = new Cabinet();
         }
 
-       //à implétmenter
-        public double calPrice()
+        public double Price
         {
-            return 0.00;
+            get { return _price; }
+            set { _price = value; }
         }
 
-        public void setDate(string datee)
+        public double getPrice()
         {
-            _date = datee;
+            return _price;
         }
-        public void newCabinet()
+        public void setPrice(double price)
         {
+            _price = price;
+        }
 
+        public void setDate(string date)
+        {
+            _date = date;
         }
 
-        public Armoire getArmoire()
+        public Cabinet GetCabinet()
         {
-            return this._armoire;
-        }
-       
+            return this._cabinet;
+        }  
     }
 }

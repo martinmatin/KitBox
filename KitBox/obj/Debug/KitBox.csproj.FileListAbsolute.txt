@@ -148,3 +148,27 @@ C:\Users\Charles\Documents\Ecam\3ème\Projet informatique\Projet génie logiciel
 C:\Users\Charles\Documents\Ecam\3ème\Projet informatique\Projet génie logiciel\Github clone\KitBox-1\KitBox\obj\Debug\KitBox.pdb
 C:\Users\julie\Documents\github\KitBox\KitBox\obj\Debug\KitBox.userControlSearchCommand.resources
 C:\Users\julie\Documents\github\KitBox\KitBox\obj\Debug\KitBox.userControlSearchArticle.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\bin\Debug\KitBox.exe.config
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.exe
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.pdb
+C:\Users\julie\Desktop\test\KitBox2\KitBox\bin\Debug\KitBox.exe
+C:\Users\julie\Desktop\test\KitBox2\KitBox\bin\Debug\KitBox.pdb
+C:\Users\julie\Desktop\test\KitBox2\KitBox\bin\Debug\MySql.Data.dll
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.csprojResolveAssemblyReference.cache
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.form.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.formColorArmoire.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.formColorCorniere.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.userControlClient2b.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.userControlSearchArticle.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.userControlSearchCommand.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.userControlValidation.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.Properties.Resources.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.txtViewer.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.userControlClient.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.userControlClient2a.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.userControlCommandeP1.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.userControlCommandeP2.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.userControlIntro.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.userControlMagasinier.resources
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.csproj.GenerateResource.Cache
+C:\Users\julie\Desktop\test\KitBox2\KitBox\obj\Debug\KitBox.FormMagasinierLogin.resources
