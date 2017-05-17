@@ -31,7 +31,7 @@ namespace KitBox
         private void userControlCommandeP2_Load(object sender, EventArgs e)
         {
 
-            om.newCasier();
+            om.NewUnit();
 
             comboHauteur.SelectedValue = 1;
             comboHauteur.SelectedText = "32cm";
@@ -70,7 +70,7 @@ namespace KitBox
 
             reloadCabinet();
 
-            if (!om.getCommand().getArmoire().getCanGetDoors())
+            if (!om.getCommand().GetCabinet().getCanGetDoors())
             {
                 checkBoxDoors.Checked = true;
                 checkBoxDoors.Visible = false;
@@ -79,21 +79,26 @@ namespace KitBox
 
         private void btnAddShelf_Click(object sender, EventArgs e)
         {
-            string temp = om.getCasierHeight(i-1).ToString();
-            if (om.getCasierHeight(i-1).ToString().Equals("0"))
+            string temp = om.getUnitHeight(i-1).ToString();
+            if (om.getUnitHeight(i-1).ToString().Equals("0"))
             {
-                MessageBox.Show("Veuillez indiquer une hauteur pour votre dernier casier.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Veuillez indiquer une hauteur pour votre dernier unit.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                om.newCasier();
+                om.NewUnit();
                 index++;
                 i++;
                 comboHauteur.SelectedValue = 1;
                 comboHauteur.SelectedText = "32cm";
                 comboHauteur.Text = "32cm";
                 EventHandler ev = new EventHandler(comboHauteur_SelectedIndexChanged);
-
+                int _height = 32;
+                for (int count = 0; count < i-1; count++)
+                {
+                    _height += om.getUnitHeight(count);
+                }
+                lblHeight.Text = _height.ToString() + " cm";
                 Panel p = (Panel)this.Controls.Find(("panelShelf" + i.ToString()), true).FirstOrDefault();
                 p.Visible = true;
 
@@ -124,7 +129,7 @@ namespace KitBox
                     btnAddShelf.Visible = false;
                 }
 
-                if (!om.getCommand().getArmoire().getCanGetDoors())
+                if (!om.getCommand().GetCabinet().getCanGetDoors())
                 {
                     checkBoxDoors.Checked = true;
                     checkBoxDoors.Visible = false;
@@ -221,7 +226,7 @@ namespace KitBox
             comboPartie.Text = "Portes";
 
 
-            if (om.getCasierHeight(index).ToString().Equals("0"))
+            if (om.getUnitHeight(index).ToString().Equals("0"))
             {
                 comboHauteur.SelectedValue = null;
                 comboHauteur.SelectedText = null;
@@ -229,8 +234,8 @@ namespace KitBox
             }
             else
             {
-                comboHauteur.SelectedValue = om.getCasierHeight(index).ToString() + "cm";
-                comboHauteur.Text = om.getCasierHeight(index).ToString() + "cm";
+                comboHauteur.SelectedValue = om.getUnitHeight(index).ToString() + "cm";
+                comboHauteur.Text = om.getUnitHeight(index).ToString() + "cm";
             }
         }
 
@@ -250,7 +255,7 @@ namespace KitBox
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            om.resetCabinet();
+            om.ResetCabinet();
             this.Controls.Clear();
             this.Controls.Add(new userControlCommandeP1(om));
         }
@@ -261,12 +266,12 @@ namespace KitBox
             if (!comboHauteur.Text.Equals(""))
             om.setCasierHeight(index, Convert.ToInt32(comboHauteur.Text.Replace("cm","")));
 
-            int height = 0;
+            int _height = 0;
             for(int count = 0; count < i; count++)
             {
-                height += om.getCasierHeight(count);
+                _height += om.getUnitHeight(count);
             }
-            lblHeight.Text = height.ToString()+" cm";
+            lblHeight.Text = _height.ToString()+" cm";
         }
 
         private void comboPartie_SelectedIndexChanged(object sender, EventArgs e)
@@ -332,13 +337,13 @@ namespace KitBox
             for(int y = 1; y < i+1; y++)
             {
                 string imgString="";
-                Dictionary<string, IElement> _elements = om.getCommand().getArmoire().getCasier(y-1).getElements();
+                Dictionary<string, IElement> _elements = om.getCommand().GetCabinet().GetUnit(y-1).GetElements();
 
 
                 //Panel Top
                 if (_elements.ContainsKey("PH"))
                 {
-                    if (_elements["PH"].color.Contains("White"))
+                    if (_elements["PH"].Color.Contains("White"))
                         imgString += "phW";
                     else
                         imgString += "phB";
@@ -348,7 +353,7 @@ namespace KitBox
                 //Panel Bot
                 if (_elements.ContainsKey("PB"))
                 {
-                    if (_elements["PB"].color.Contains("White"))
+                    if (_elements["PB"].Color.Contains("White"))
                         imgString += "pbW";
                     else
                         imgString += "pbB";
@@ -358,7 +363,7 @@ namespace KitBox
                 //Panel Right
                 if (_elements.ContainsKey("PR"))
                 {
-                    if (_elements["PR"].color.Contains("White"))
+                    if (_elements["PR"].Color.Contains("White"))
                         imgString += "prW";
                     else
                         imgString += "prB";
@@ -368,9 +373,9 @@ namespace KitBox
                 //Door Left
                 if (_elements.ContainsKey("DL"))
                 {
-                    if (_elements["DL"].color.Contains("White"))
+                    if (_elements["DL"].Color.Contains("White"))
                         imgString += "dlW";
-                    else if (_elements["DL"].color.Contains("Brown"))
+                    else if (_elements["DL"].Color.Contains("Brown"))
                         imgString += "dlB";
                     else
                         imgString += "dlG";
@@ -381,9 +386,9 @@ namespace KitBox
                 //Door Right
                 if (_elements.ContainsKey("DR"))
                 {
-                    if (_elements["DR"].color.Contains("White"))
+                    if (_elements["DR"].Color.Contains("White"))
                         imgString += "drW";
-                    else if (_elements["DR"].color.Contains("Brown"))
+                    else if (_elements["DR"].Color.Contains("Brown"))
                         imgString += "drB";
                     else
                         imgString += "drG";
@@ -404,18 +409,18 @@ namespace KitBox
 
             }
 
-            Dictionary<string, IElement> _element = om.getCommand().getArmoire().getCasier(index).getElements();
+            Dictionary<string, IElement> _element = om.getCommand().GetCabinet().GetUnit(index).GetElements();
             if (_element.ContainsKey("DR"))
                 checkBoxDoors.Checked = false;
             else
                 checkBoxDoors.Checked = true;
 
 
-            this.om.getCommand().getArmoire().generateCode();
+            this.om.getCommand().GetCabinet().GenerateCode();
             reloadSliderLocation();
             List<Dictionary<string, int>> stock = checkStock();
             double price = calcPrice(stock[1]);
-            lblPrice.Text = price.ToString();
+            lblPrice.Text = price.ToString()+ " €";
         }
 
         private void checkBoxDoors_CheckedChanged(object sender, EventArgs e)
@@ -430,8 +435,8 @@ namespace KitBox
                 btnP21.Visible = false;
                 btnP22.Visible = false;
                 btnP23.Visible = false;
-                om.getCommand().getArmoire().getCasier(index).getElements().Remove("DL");
-                om.getCommand().getArmoire().getCasier(index).getElements().Remove("DR");
+                om.getCommand().GetCabinet().GetUnit(index).GetElements().Remove("DL");
+                om.getCommand().GetCabinet().GetUnit(index).GetElements().Remove("DR");
 
             }
             else
@@ -446,7 +451,7 @@ namespace KitBox
                 btnP23.Visible = true;
                 try
                 {
-                    om.getCommand().getArmoire().getCasier(index).generateDoors();
+                    om.getCommand().GetCabinet().GetUnit(index).GenerateDoors();
                 }
                 catch(Exception exception)
                 {
@@ -571,34 +576,34 @@ namespace KitBox
 
         private void reloadSliderLocation()
         {
-            Dictionary<string, IElement> _element = om.getCommand().getArmoire().getCasier(index).getElements();
+            Dictionary<string, IElement> _element = om.getCommand().GetCabinet().GetUnit(index).GetElements();
 
             //Back Panel
-            if (_element["PAR"].color.Contains("White"))
+            if (_element["PAR"].Color.Contains("White"))
                 setSliderLocation(btnPanelAR1, sliderPAR1);
             else
                 setSliderLocation(btnPanelAR2, sliderPAR1);
 
             //Left Panel
-            if (_element["PL"].color.Contains("White"))
+            if (_element["PL"].Color.Contains("White"))
                 setSliderLocation(btnPanelG1, sliderPG);
             else
                 setSliderLocation(btnPanelG2, sliderPG);
 
             //Right Panel
-            if (_element["PR"].color.Contains("White"))
+            if (_element["PR"].Color.Contains("White"))
                 setSliderLocation(btnPanelD1, sliderPD);
             else
                 setSliderLocation(btnPanelD2, sliderPD);
 
             //Top Panel
-            if (_element["PH"].color.Contains("White"))
+            if (_element["PH"].Color.Contains("White"))
                 setSliderLocation(btnPH1, sliderPH);
             else
                 setSliderLocation(btnPH2, sliderPH);
 
             //Bot Panel
-            if (_element["PB"].color.Contains("White"))
+            if (_element["PB"].Color.Contains("White"))
                 setSliderLocation(btnPB1, sliderPB);
             else
                 setSliderLocation(btnPB2, sliderPB);
@@ -607,9 +612,9 @@ namespace KitBox
             if (_element.ContainsKey("DL"))
             {
                 sliderDL.Visible = true;
-                if (_element["DL"].color.Contains("White"))
+                if (_element["DL"].Color.Contains("White"))
                     setSliderLocation(btnP11, sliderDL);
-                else if (_element["DL"].color.Contains("Brown"))
+                else if (_element["DL"].Color.Contains("Brown"))
                     setSliderLocation(btnP12, sliderDL);
                 else
                     setSliderLocation(btnP13, sliderDL);
@@ -621,9 +626,9 @@ namespace KitBox
             if (_element.ContainsKey("DR"))
             {
                 sliderDR.Visible = true;
-                if (_element["DR"].color.Contains("White"))
+                if (_element["DR"].Color.Contains("White"))
                     setSliderLocation(btnP21, sliderDR);
-                else if (_element["DR"].color.Contains("Brown"))
+                else if (_element["DR"].Color.Contains("Brown"))
                     setSliderLocation(btnP22, sliderDR);
                 else
                     setSliderLocation(btnP23, sliderDR);
@@ -638,7 +643,7 @@ namespace KitBox
         {
             if (i > 1)
             {
-                this.om.getCommand().getArmoire().removeCasier(index);
+                this.om.getCommand().GetCabinet().RemoveUnit(index);
                 i--;
                 index = i - 1;
                 hidePanels();
@@ -687,7 +692,7 @@ namespace KitBox
         private List<Dictionary<string,int>> checkStock()
         {
             List<Dictionary<string, int>> L = new List<Dictionary<string, int>>();
-            Dictionary<string, int> dicOfElements = getDicOfElements();
+            Dictionary<string, int> dicOfElements = om.getCommand().GetCabinet().getDicOfElements();
             Dictionary<string, int> missingElements = dbm.ElementsInStock(dicOfElements)[1];
             Dictionary<string, int> dispElements = dbm.ElementsInStock(dicOfElements)[0];
             edit.printMissing(missingElements);
@@ -709,33 +714,18 @@ namespace KitBox
         }
         private double calcPrice(Dictionary<string, int> all)
         {
-            return dbm.totalPrice(all);
+            om.getCommand().setPrice(dbm.TotalPrice(all));
+            return om.getCommand().getPrice();
         }
 
-        private Dictionary<string, int> getDicOfElements()
-        {
-            Dictionary<string, int> dicOfElements = new Dictionary<string, int>();
-            for (int x = 0; x < index+1; x++) {
-                Casier casier = this.om.getCommand().getArmoire().getCasier(x);
-                foreach(KeyValuePair<string, IElement> elem in casier.getElements())
-                {
-                    if (dicOfElements.ContainsKey(elem.Value.code))
-                    {
-                        dicOfElements[elem.Value.code]++;
-                    }
-                    else
-                    {
-                        dicOfElements.Add(elem.Value.code, 1);
-                    }
-                        
-                }
-            }
-            return dicOfElements;
-        }
+        
+
+       
+
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            txtViewer f2 = new txtViewer("CommandeP2");
+            txtViewer f2 = new txtViewer("CommandeP2",null);
             f2.userControlCommandeP2 = this;
             f2.ShowDialog();
         }

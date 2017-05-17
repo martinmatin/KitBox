@@ -54,10 +54,10 @@ CREATE TABLE `orderedpart` (
 CREATE TABLE `sale` (
   `order_id` int(11) NOT NULL,
   `client_id` int(11) NOT NULL,
-  `order_date` datetime NOT NULL,
-  `delivery_date` datetime NOT NULL,
+  `order_date` varchar(14) NOT NULL,
+  `delivery_date` varchar(14) NOT NULL,
   `price` decimal(8,4) NOT NULL,
-  `is_payed` decimal(8,4) NOT NULL,
+  `is_payed` varchar(7) NOT NULL,
   `is_delivered` varchar(7) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -68,20 +68,41 @@ CREATE TABLE `sale` (
 CREATE TABLE `stock` (
   `code` varchar(20) NOT NULL,
   `client_price` decimal(8,4) NOT NULL,
-  `stock_q` smallint(6) NOT NULL,
+  `real_stock` smallint(6) NOT NULL,
+  `virtual_stock` smallint(6) NOT NULL,
   `minimal_q` smallint(6) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Structure de la table `supplier`
+-- Structure de la table `part_info`
 --
-CREATE TABLE `supplier` (
+CREATE TABLE `part_info` (
+  `part_id` int(11) NOT NULL,
+  `supplier_id` int(11) NOT NULL,
   `code` varchar(20) NOT NULL,
-  `supplier_1_price` decimal(8,4) NOT NULL,
-  `supplier_1_delay` tinyint(4) DEFAULT NULL,
-  `supplier_2_price` decimal(8,4) NOT NULL,
-  `supplier_2_delay` tinyint(4) DEFAULT NULL
+  `delay` tinyint(4) DEFAULT NULL,
+  `price` decimal(8,4) DEFAULT NULL
+--  `supplier_1_price` decimal(8,4) NOT NULL,
+--  `supplier_1_delay` tinyint(4) DEFAULT NULL,
+--  `supplier_2_price` decimal(8,4) NOT NULL,
+--  `supplier_2_delay` tinyint(4) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Structure de la table `supplier_info`
+--
+CREATE TABLE `supplier_info` (
+  `supplier_id` int(11) NOT NULL,
+  `company` varchar(100) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL
+--  `supplier_1_price` decimal(8,4) NOT NULL,
+--  `supplier_1_delay` tinyint(4) DEFAULT NULL,
+--  `supplier_2_price` decimal(8,4) NOT NULL,
+--  `supplier_2_delay` tinyint(4) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
 
 --
 -- Index pour les tables exportées
@@ -115,10 +136,16 @@ ALTER TABLE `stock`
   ADD PRIMARY KEY (`code`);
 
 --
--- Index pour la table `supplier`
+-- Index pour la table `part_info`
 --
-ALTER TABLE `supplier`
-  ADD PRIMARY KEY (`code`);
+ALTER TABLE `part_info`
+  ADD PRIMARY KEY (`part_id`);
+
+  --
+-- Index pour la table `supplier_info`
+--
+ALTER TABLE `supplier_info`
+  ADD PRIMARY KEY (`supplier_id`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -139,6 +166,21 @@ ALTER TABLE `orderedpart`
 --
 ALTER TABLE `sale`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+ --
+-- AUTO_INCREMENT pour la table `part_info`
+--
+ALTER TABLE `part_info`
+  MODIFY `part_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
+  --
+  -- AUTO_INCREMENT pour la table `part_info`
+  --
+  ALTER TABLE `supplier_info`
+   MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

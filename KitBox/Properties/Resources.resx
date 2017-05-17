@@ -118,17 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="warning-icon-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning-icon-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="homme_button_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\homme_button_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phWpbWprWdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phWpbWprWdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="phWpbBprBdlGdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbBprBdlGdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="modifierStock_mettreAjour_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modifierStock_mettreAjour_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phWpbBprBdlBdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbBprBdlBdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,9 +235,6 @@
   <data name="pg3-a_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pg3-a_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phBpbBprWdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phBpbBprWdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="plus_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -310,11 +304,17 @@
   <data name="grey5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grey5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="phBpbWprWdlBdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phBpbWprWdlBdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="grey6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grey6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phBpbWprBdlGdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprBdlGdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phBpbWprWdlNdrN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phBpbWprWdlNdrN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phBpbBprBdlBdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbBprBdlBdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -333,6 +333,9 @@
   </data>
   <data name="phBpbWprBdlGdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprBdlGdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phWpbWprWdlNdrN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbWprWdlNdrN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -391,8 +394,8 @@
   <data name="phBpbBprWdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbBprWdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="color" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phBpbBprWdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phBpbBprWdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phWpbWprBdlBdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbWprBdlBdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -400,8 +403,8 @@
   <data name="phBpbWprBdlNdrN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprBdlNdrN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="color2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\color2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="trouverunecommande_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trouverunecommande_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phWpbWprWdlWdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phWpbWprWdlWdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -451,8 +454,8 @@
   <data name="phBpbWprWdlGdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprWdlGdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phBpbWprWdlBdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phBpbWprWdlBdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phWpbWprWdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phWpbWprWdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="color6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\color6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -471,6 +474,9 @@
   </data>
   <data name="phBpbBprWdlGdrW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbBprWdlGdrW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="color5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phBpbWprBdlWdrB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprBdlWdrB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -508,8 +514,8 @@
   <data name="home_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="color5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\color5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="modifierStock_mettreAjour_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modifierStock_mettreAjour_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phBpbWprWdlWdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprWdlWdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -526,10 +532,10 @@
   <data name="phBpbWprBdlBdrG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phBpbWprBdlBdrG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phBpbWprWdlNdrN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phBpbWprWdlNdrN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="color2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="trouverunecommande_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trouverunecommande_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ruptureStock_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ruptureStock_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

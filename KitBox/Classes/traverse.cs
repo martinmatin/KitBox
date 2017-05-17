@@ -15,17 +15,16 @@ namespace KitBox
         private int _depth;
         private int _width;
 
-
         //Constructor
         public Traverse(int height, int depth, int width, string orientation)
         {
-            this._height = height;
-            this._width = width;
-            this._depth = depth;
-            this._orientation = orientation;
+            _height = height;
+            _width = width;
+            _depth = depth;
+            _orientation = orientation;
         }
 
-        public void generateCode()
+        public void GenerateCode()
         {
             _code = "TR";
             if (_depth != 0)
@@ -39,16 +38,14 @@ namespace KitBox
             else if (_orientation == "AV")
             {
                 _code += "F" + _width.ToString();
-            }
-            
+            }  
         }
         //Propoerty Implementation
-        public string code { get { return _code; } }
-        public string color { get { return _color; } set { this._color = value; } }
-
-        public int height { get { return _height; } set { this._height = value; } }
-        public int depth { get { return _depth; } }
-        public int width { get { return _width; } }
+        public string Code { get { return _code; } }
+        public string Color { get { return _color; } set { _color = value; } }
+        public int Height { get { return _height; } set { _height = value; } }
+        public int Depth { get { return _depth; } }
+        public int Width { get { return _width; } }
 
 
     }

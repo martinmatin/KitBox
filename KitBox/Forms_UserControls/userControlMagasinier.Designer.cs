@@ -24,7 +24,7 @@
 
         /// <summary> 
         /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas 
-        /// le contenu de cette méthode avec l'éditeur de code.
+        /// le contenu de cette méthode avec l'éditeur de _code.
         /// </summary>
         private void InitializeComponent()
         {
@@ -33,6 +33,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.Magasin = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -114,12 +116,25 @@
             this.Magasin.TabIndex = 9;
             this.Magasin.Text = "Magasin";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::KitBox.Properties.Resources.warning_icon_24;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(1582, 628);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(220, 183);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
             // userControlMagasinier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::KitBox.Properties.Resources.mag_a_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Magasin);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -130,6 +145,8 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "userControlMagasinier";
             this.Size = new System.Drawing.Size(2182, 1175);
+            this.Load += new System.EventHandler(this.userControlMagasinier_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +159,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label Magasin;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

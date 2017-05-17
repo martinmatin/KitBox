@@ -8,12 +8,12 @@ namespace KitBox
 {
     public interface IElement
     {
-        string code { get; }
-        string color { get; set; }
-        int height { get; set; }
-        int depth { get; }
-        int width { get; }
+        string Code { get; }
+        string Color { get; set; }
+        int Height { get; set; }
+        int Depth { get; }
+        int Width { get; }
 
-        void generateCode();
+        void GenerateCode();
     }
 }

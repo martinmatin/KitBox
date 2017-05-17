@@ -24,7 +24,7 @@
 
         /// <summary> 
         /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas 
-        /// le contenu de cette méthode avec l'éditeur de code.
+        /// le contenu de cette méthode avec l'éditeur de _code.
         /// </summary>
         private void InitializeComponent()
         {
@@ -55,7 +55,7 @@
             // 
             this.btnValidateClient.BackColor = System.Drawing.Color.Transparent;
             this.btnValidateClient.BackgroundImage = global::KitBox.Properties.Resources.pg3_a_validerbutton;
-            this.btnValidateClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnValidateClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnValidateClient.FlatAppearance.BorderSize = 0;
             this.btnValidateClient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnValidateClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -13,17 +13,14 @@ namespace KitBox
         public string _client_id;
         public string _command_id;
 
-        public Client(string name, string email, string client_id, string command_id)
+        public Client(string name, string email, string clientId, string command_id)
         {
             _name = name;
             _email = email;
-            _client_id = client_id;
+            _client_id = clientId;
             _command_id = command_id;
         }
 
-
-        public void setName(string name) {
-            _name = name;
-        }
+        public void SetName(string name) {_name = name;}
     }
 }

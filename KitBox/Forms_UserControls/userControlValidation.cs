@@ -14,10 +14,21 @@ namespace KitBox
     {
         OrderManager om;
         DatabaseManager dbm = new DatabaseManager();
+
+        Dictionary<string, string> infos;
+
+
+
         public userControlValidation(OrderManager om)
         {
             this.om = om;
             InitializeComponent();
+            Dictionary<string, int> dicOfElements = getDicOfElements();
+            Dictionary<string, int> missingElements = dbm.ElementsInStock(dicOfElements)[1];
+            Dictionary<string, int> dispElements = dbm.ElementsInStock(dicOfElements)[0];
+            infos = checkInfos();
+            editor edit = new editor();
+            //edit.PrintBill(infos, missingElements, dispElements);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,15 +38,8 @@ namespace KitBox
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Dictionary<string, int> dicOfElements = getDicOfElements();
-            Dictionary<string, int> missingElements = dbm.ElementsInStock(dicOfElements)[1];
-            Dictionary<string, int> dispElements = dbm.ElementsInStock(dicOfElements)[0];
-            Dictionary<string, string> infos = checkInfos();
 
-            editor edit = new editor();
-            edit.printBill(infos,missingElements,dispElements);
-
-            txtViewer f2 = new txtViewer("Validation");
+            txtViewer f2 = new txtViewer("Validation_Magasinier",infos["id"]);
             f2.userControlValidation = this;
             f2.ShowDialog();
         }
@@ -43,19 +47,19 @@ namespace KitBox
         private Dictionary<string, int> getDicOfElements()
         {
             Dictionary<string, int> dicOfElements = new Dictionary<string, int>();
-            int y = om.getCommand().getArmoire().casierCount();
-            for (int x = 0; x < y-1; x++)
+            int y = om.getCommand().GetCabinet().UnitCount();
+            for (int x = 0; x < y; x++)
             {
-                Casier casier = this.om.getCommand().getArmoire().getCasier(x);
-                foreach (KeyValuePair<string, IElement> elem in casier.getElements())
+                Unit unit = this.om.getCommand().GetCabinet().GetUnit(x);
+                foreach (KeyValuePair<string, IElement> elem in unit.GetElements())
                 {
-                    if (dicOfElements.ContainsKey(elem.Value.code))
+                    if (dicOfElements.ContainsKey(elem.Value.Code))
                     {
-                        dicOfElements[elem.Value.code]++;
+                        dicOfElements[elem.Value.Code]++;
                     }
                     else
                     {
-                        dicOfElements.Add(elem.Value.code, 1);
+                        dicOfElements.Add(elem.Value.Code, 1);
                     }
 
                 }
@@ -67,14 +71,35 @@ namespace KitBox
         {
             Dictionary<string, string> infos = new Dictionary<string, string>();
             infos.Add("nom", om.getClient()._name);
-            infos.Add("num", "123");
-            infos.Add("date", "todayyy");
-            infos.Add("prix", om.getCommand().calPrice().ToString());
-            infos.Add("etat", "dispo dans 1 semaine");
-            infos.Add("id", "007");
+            infos.Add("num", om.getClient()._email);
+            infos.Add("date", om.getCommand()._date);
+            infos.Add("prix", om.getCommand()._price.ToString() + " €");
+            infos.Add("etat", om.getCommand()._isDelivered.ToString());
+            infos.Add("id", om.getCommand()._orderId);
+            infos.Add("payed", om.getCommand()._isPayed.ToString());
+
 
 
             return infos;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtViewer f2 = new txtViewer("Validation_Client",infos["id"]);
+            f2.userControlValidation = this;
+            f2.ShowDialog();
+        }
+
+        private void userControlValidation_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.BackgroundImage = null;
+            this.Controls.Clear();
+            this.Controls.Add(new userControlIntro());
         }
     }
 }

@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Component Designer generated _code
 
         /// <summary> 
         /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
+        /// the contents of this method with the _code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -149,9 +149,9 @@
             this.lblNoDoors.Location = new System.Drawing.Point(83, 945);
             this.lblNoDoors.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoDoors.Name = "lblNoDoors";
-            this.lblNoDoors.Size = new System.Drawing.Size(1030, 51);
+            this.lblNoDoors.Size = new System.Drawing.Size(1044, 51);
             this.lblNoDoors.TabIndex = 22;
-            this.lblNoDoors.Text = "Attention : Pour cette lageur, il n\'y aura pas de portes";
+            this.lblNoDoors.Text = "Attention : Pour cette largeur, il n\'y aura pas de portes";
             this.lblNoDoors.Visible = false;
             // 
             // btnBack

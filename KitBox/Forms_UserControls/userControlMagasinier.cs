@@ -44,5 +44,15 @@ namespace KitBox
             this.Controls.Clear();
             this.Controls.Add(new userControlSearchCommand());
         }
+
+        private void userControlMagasinier_Load(object sender, EventArgs e)
+        {
+            DatabaseManager dbm = new DatabaseManager();
+            List<string> missing = dbm.VerifyStock();
+            if (missing.Count() > 0)
+                pictureBox1.Visible = true;
+            else
+                pictureBox1.Visible = false;
+        }
     }
 }

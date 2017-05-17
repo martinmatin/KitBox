@@ -75,22 +75,22 @@ namespace KitBox
             }
             else
             {
-                //sets amoire color
+                //sets amoire _color
                 if (checkUniformColor.Checked)
                     om.setCabinetColor(btnColArmoire.BackColor.ToString());
                 else
                     om.setCabinetColor("nocolor");
 
-                //sets corniere color
+                //sets AngleIron _color
                 om.setAngleIronColor(btnColorCorniere.BackColor.ToString());
 
-                //sets width and depth of cabinet
+                //sets _width and _depth of cabinet
                 om.setCabinetDimensions(Convert.ToInt32(comboLargeur.Text), Convert.ToInt32(comboProfondeur.Text));
 
                 if (lblNoDoors.Visible == true)
-                    om.getCommand().getArmoire().setCanGetDoors(false);
+                    om.getCommand().GetCabinet().setCanGetDoors(false);
                 else
-                    om.getCommand().getArmoire().setCanGetDoors(true);
+                    om.getCommand().GetCabinet().setCanGetDoors(true);
 
                 this.BackgroundImage = null;
                 this.Controls.Clear();

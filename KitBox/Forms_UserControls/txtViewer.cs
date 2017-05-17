@@ -15,8 +15,10 @@ namespace KitBox
     {
         userControlCommandeP2 uc;
         userControlValidation ucV;
+        userControlSearchCommand ucCC;
 
-        string from;
+
+        string from, id;
 
         public userControlCommandeP2 userControlCommandeP2
         {
@@ -30,10 +32,17 @@ namespace KitBox
             set { ucV = value; }
         }
 
-        public txtViewer(string from)
+        public userControlSearchCommand userControlSearchCommand
+        {
+            get { return ucCC; }
+            set { ucCC = value; }
+        }
+
+        public txtViewer(string from,string id)
         {
             InitializeComponent();
             this.from = from;
+            this.id = id;
         }
 
         private void txtViewer_Load(object sender, EventArgs e)
@@ -51,10 +60,18 @@ namespace KitBox
                 txtBox.Text = reader.ReadToEnd();
                 reader.Close();
             }
-            else if (from.Equals("Validation"))
+            else if (from.Equals("Validation_Magasinier"))
             {
                 lblWhat.Text = "Résumé de la commande";
-                reader = File.OpenText("valid2.txt");
+                reader = File.OpenText("valid_magasin_"+id+".txt");
+                txtBox.Text = reader.ReadToEnd();
+                reader.Close();
+            }
+
+            else if (from.Equals("Validation_Client"))
+            {
+                lblWhat.Text = "Résumé de la commande";
+                reader = File.OpenText("valid_client_"+id+".txt");
                 txtBox.Text = reader.ReadToEnd();
                 reader.Close();
             }

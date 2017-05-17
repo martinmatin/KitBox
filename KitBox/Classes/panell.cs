@@ -19,14 +19,14 @@ namespace KitBox
         //Constructor
         public Panell(int height, int depth, int width, string orientation,string color)
         {
-            this._color = color;
-            this._height = height;
-            this._depth = depth;
-            this._width = width;
-            this._orientation = orientation;
+            _color = color;
+            _height = height;
+            _depth = depth;
+            _width = width;
+            _orientation = orientation;
         }
 
-        public void generateCode()
+        public void GenerateCode()
         {
             _code = "";
             if (_orientation == "AR")
@@ -38,21 +38,21 @@ namespace KitBox
             else if (_orientation == "HB")
             { _code += "PAH" + _depth + _width; }
 
-            if (this._color.Contains("White"))
+            if (_color.Contains("White"))
                 _code += "BL";
-            else if (this._color.Contains("Brown"))
+            else if (_color.Contains("Brown"))
                 _code += "BR";
-            else if (this._color.Contains("Aqua"))
+            else if (_color.Contains("Aqua"))
                 _code += "VE";
 
         }
         //Propoerty Implementation
-        public string code { get { return _code; } }
-        public string color { get { return _color; } set { this._color = value; } }
+        public string Code { get { return _code; } }
+        public string Color { get { return _color; } set { _color = value; } }
 
-        public int height { get { return _height; } set { this._height = value; } }
-        public int depth { get { return _depth; } }
-        public int width { get { return _width; } }
+        public int Height { get { return _height; } set { _height = value; } }
+        public int Depth { get { return _depth; } }
+        public int Width { get { return _width; } }
 
 
     }

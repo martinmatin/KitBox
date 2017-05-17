@@ -19,7 +19,7 @@ namespace KitBox
         //Méthodes à implémenter
         public void newOrder() {
             Command newCommand = new Command();
-            this._command = newCommand;
+            _command = newCommand;
         }
 
         public void newClient(string name,string email, string id, string commandId)
@@ -34,69 +34,57 @@ namespace KitBox
 
         public Command getCommand()
         {
-            return this._command;
+            return _command;
         }
 
         public void setCabinetDimensions(int width, int depth) {
-            this._command.getArmoire().setDimensions(width,depth);
+            _command.GetCabinet().SetDimensions(width,depth);
         }
         public List<int> getCabinetDimensions()
         {
-            return this._command.getArmoire().getDimensions();
+            return _command.GetCabinet().GetDimensions();
         }
 
         public void setCabinetColor(string color) {
-            this._command.getArmoire().setColor(color);
+            _command.GetCabinet().setColor(color);
         }
 
         public string getCabinetColor()
         {
-            return this._command.getArmoire().getColor();
+            return _command.GetCabinet().getColor();
         }
 
         public void setAngleIronColor(string color) {
-            this._command.getArmoire().setAngleIronColor(color);
+            _command.GetCabinet().setAngleIronColor(color);
         }
 
-        public void newCasier()
+        public void NewUnit()
         {
-            this._command.getArmoire().newCasier();
+            _command.GetCabinet().NewUnit();
         }
 
         public void setDoorColors(int index, string door, string color) {
-            this._command.getArmoire().setCasierPartieXColor(index, door, color );
+            _command.GetCabinet().setUnitPartXColor(index, door, color );
         }
 
         public void setPanelColors(int index, string panel, string color)
         {
-            this._command.getArmoire().setCasierPartieXColor(index, panel, color);
+            _command.GetCabinet().setUnitPartXColor(index, panel, color);
         }
 
-        public int getCasierHeight(int index)
+        public int getUnitHeight(int index)
         {
-            return this._command.getArmoire().getCasierHeight(index);
+            return _command.GetCabinet().getUnitHeight(index);
         }
 
         public void setCasierHeight(int index, int height)
         {
-            this._command.getArmoire().setCasierHeight(index, height);
+            _command.GetCabinet().setCasierHeight(index, height);
         }
 
-        public void resetCabinet()
+        public void ResetCabinet()
         {
-            this._command.getArmoire().resetCabinet();
+            _command.GetCabinet().ResetCabinet();
         }
-
-
-        public void setPanelColorB(string color) { }
-        public void setPanelColorL(string color) { }
-        public void setPanelColorR(string color) { }
-        public void setNewUnit(bool b) { }
-        public void orderMultiplier(int num) { }
-        public void identification(string id) { }
-        public void pwdValidation(string pwd) { }
-        public void registration(string email, string phontnumber, bool pwd, string name, string surname, string address) { }
     }
-
-
 }

@@ -1413,6 +1413,16 @@ namespace KitBox.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ruptureStock_background {
+            get {
+                object obj = ResourceManager.GetObject("ruptureStock_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap test1 {
             get {
                 object obj = ResourceManager.GetObject("test1", resourceCulture);
@@ -1436,6 +1446,16 @@ namespace KitBox.Properties {
         internal static System.Drawing.Bitmap trouverunecommande_background {
             get {
                 object obj = ResourceManager.GetObject("trouverunecommande_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warning_icon_24 {
+            get {
+                object obj = ResourceManager.GetObject("warning-icon-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
